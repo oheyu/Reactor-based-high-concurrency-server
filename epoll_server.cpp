@@ -1,3 +1,5 @@
+#include "InetAddress.h"
+
 #include <iostream>
 #include <fcntl.h>
 #include <sys/socket.h>
@@ -25,12 +27,9 @@ int main(int argc, char* argv[]) {
     setsockopt(listen_fd, SOL_SOCKET, SO_REUSEPORT, &opt, static_cast<socklen_t>(sizeof(opt)));
     setsockopt(listen_fd, SOL_SOCKET, SO_KEEPALIVE, &opt, static_cast<socklen_t>(sizeof(opt)));
 
-    struct sockaddr_in server_address;
-    server_address.sin_family = AF_INET;
-    server_address.sin_addr.s_addr = inet_addr(argv[1]);
-    server_address.sin_port = htons(atoi(argv[2]));
+    InetAddress server_address(argv[1], atoi(argv[2]));
 
-    if (bind(listen_fd, reinterpret_cast<struct sockaddr*>(&server_address), sizeof(server_address)) == -1) {
+    if (bind(listen_fd, server_address.addr(), sizeof(struct sockaddr)) == -1) {
         perror("bind() failed"); close(listen_fd); return -1;
     }
 
@@ -63,12 +62,13 @@ int main(int argc, char* argv[]) {
                 close(results[i].data.fd); continue;
             } else if (results[i].events & (EPOLLIN | EPOLLPRI)) {
                 if (results[i].data.fd == listen_fd) {
-                    struct sockaddr_in client_address;
-                    socklen_t length {static_cast<socklen_t>(sizeof(client_address))};
-                    int client_fd {accept4(listen_fd, (struct sockaddr*)(&client_address), &length, SOCK_NONBLOCK)};
+                    struct sockaddr_in peer_address;
+                    socklen_t length {static_cast<socklen_t>(sizeof(peer_address))};
+                    int client_fd {accept4(listen_fd, (struct sockaddr*)(&peer_address), &length, SOCK_NONBLOCK)};
                     if (client_fd == -1) {perror("accept() failed"); break;}
-                    std::cout << "Establish connection with <" << inet_ntoa(client_address.sin_addr)
-                        << "> on <" << ntohs(client_address.sin_port) << "> using <" << client_fd << ">" << std::endl;
+                    InetAddress client_address(peer_address);
+                    std::cout << "Establish connection with <" << client_address.ip() 
+                        << "> on <" << client_address.port() << "> using <" << client_fd << ">" << std::endl;
 
                     interest_event.data.fd = client_fd;
                     interest_event.events = EPOLLIN;

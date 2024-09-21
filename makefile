@@ -1,7 +1,7 @@
 all: server client
 
-server: epoll_server.cpp
-	g++ -o server epoll_server.cpp
+server: epoll_server.cpp InetAddress.cpp
+	g++ -o server epoll_server.cpp InetAddress.cpp
 
 client: client.cpp
 	g++ -o client client.cpp

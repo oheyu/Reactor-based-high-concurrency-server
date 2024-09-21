@@ -25,8 +25,7 @@ int main(int argc, char* argv[]) {
     char buffer[1024];
     while (true) {
         std::cout << "Please enter message you want to send (enter 'quit' to stop): ";
-        memset(buffer, 0, sizeof(buffer));
-        std::cin.get(buffer, sizeof(buffer)).get();
+        memset(buffer, 0, sizeof(buffer)); std::cin.get(buffer, sizeof(buffer)).get();
         if (strcmp(buffer, "quit") == 0) {close(client_fd); return 0;}
 
         if (send(client_fd, buffer, strlen(buffer), 0) == -1) {

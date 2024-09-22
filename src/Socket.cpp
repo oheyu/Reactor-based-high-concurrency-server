@@ -49,7 +49,7 @@ void Socket::listen(int backlog) {
     // Set 'backlog' in listen() to be a little bigger if you need high-concurrency.
     if (::listen(fd_, backlog) == -1) {
         std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
-            << "-> listen socket error: " << std::strerror(errno) << std::endl;
+            << "-> set socket to be listening error: " << std::strerror(errno) << std::endl;
         ::close(fd_); exit(-1);
     } else {
         std::cout << "Listening on " << fd_ << "..." << std::endl;

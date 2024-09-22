@@ -1,4 +1,5 @@
 #include "InetAddress.h"
+#include "Socket.h"
 
 #include <iostream>
 #include <fcntl.h>
@@ -19,34 +20,23 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    // Create socket for listen_fd.
-    int listen_fd {socket(AF_INET, SOCK_STREAM|SOCK_NONBLOCK, IPPROTO_TCP)};
-    int opt {1};
-    setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &opt, static_cast<socklen_t>(sizeof(opt)));
-    setsockopt(listen_fd, SOL_SOCKET, TCP_NODELAY, &opt, static_cast<socklen_t>(sizeof(opt))); // Disable Naggle
-    setsockopt(listen_fd, SOL_SOCKET, SO_REUSEPORT, &opt, static_cast<socklen_t>(sizeof(opt)));
-    setsockopt(listen_fd, SOL_SOCKET, SO_KEEPALIVE, &opt, static_cast<socklen_t>(sizeof(opt)));
+    Socket listen_fd(createNonBlock());
+    listen_fd.setReuseAddr(true);
+    listen_fd.setReusePort(true);
+    listen_fd.setTcpNoDelay(true);
+    listen_fd.setKeepAlive(true);
 
     InetAddress server_address(argv[1], atoi(argv[2]));
-
-    if (bind(listen_fd, server_address.addr(), sizeof(struct sockaddr)) == -1) {
-        perror("bind() failed"); close(listen_fd); return -1;
-    }
-
-    // Set 'backlog' in listen() to be a little bigger if you need high-concurrency.
-    if (listen(listen_fd, 128) == -1) {
-        perror("listen() failed"); close(listen_fd); return -1;
-    } else {
-        std::cout << "Listening on " << listen_fd << "..." << std::endl;
-    }
+    listen_fd.bind(server_address);
+    listen_fd.listen();
 
     int epoll_fd {epoll_create(1)};
 
     struct epoll_event interest_event;
-    interest_event.data.fd = listen_fd;
+    interest_event.data.fd = listen_fd.getFd();
     interest_event.events = EPOLLIN;       // Adopt default LT.
 
-    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, listen_fd, &interest_event);
+    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, listen_fd.getFd(), &interest_event);
 
     struct epoll_event results[10];        // Store results returned by epoll_wait();
 
@@ -61,18 +51,23 @@ int main(int argc, char* argv[]) {
                 std::cerr << "Client @ " << results[i].data.fd << " disconnect." << std::endl;
                 close(results[i].data.fd); continue;
             } else if (results[i].events & (EPOLLIN | EPOLLPRI)) {
-                if (results[i].data.fd == listen_fd) {
-                    struct sockaddr_in peer_address;
-                    socklen_t length {static_cast<socklen_t>(sizeof(peer_address))};
-                    int client_fd {accept4(listen_fd, (struct sockaddr*)(&peer_address), &length, SOCK_NONBLOCK)};
-                    if (client_fd == -1) {perror("accept() failed"); break;}
-                    InetAddress client_address(peer_address);
+                if (results[i].data.fd == listen_fd.getFd()) {
+                    // struct sockaddr_in peer_address;
+                    // socklen_t length {static_cast<socklen_t>(sizeof(peer_address))};
+                    // int client_fd {accept4(listen_fd.getFd(), (struct sockaddr*)(&peer_address), &length, SOCK_NONBLOCK)};
+                    InetAddress client_address;
+                    Socket* client_fd {new Socket(listen_fd.accept(client_address))};
+                    if (client_fd->getFd() == -1) {
+                        std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
+                            << "-> bind socket error: " << std::strerror(errno) << std::endl;
+                        break;
+                    }
                     std::cout << "Establish connection with <" << client_address.ip() 
-                        << "> on <" << client_address.port() << "> using <" << client_fd << ">" << std::endl;
+                        << "> on <" << client_address.port() << "> using <" << client_fd->getFd() << ">" << std::endl;
 
-                    interest_event.data.fd = client_fd;
+                    interest_event.data.fd = client_fd->getFd();
                     interest_event.events = EPOLLIN;
-                    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, client_fd, &interest_event);
+                    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, client_fd->getFd(), &interest_event);
                 } else {
                     char buffer[1024];
                     while (true) {

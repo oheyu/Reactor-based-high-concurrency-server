@@ -6,3 +6,6 @@ At the very first beginning, I just created a simple server based on epoll and o
 
 ## Step-2: Add InetAddress Class
 Encapsulate the contents about 'sockaddr' to make things easy.
+
+## Step-3: Add Socket Class
+Encapsulate the contents like 'listen()', 'bind()' and 'setsockopt()'...

@@ -1,6 +1,8 @@
 #include "InetAddress.h"
 
 
+InetAddress::InetAddress() {}
+
 InetAddress::InetAddress(const char* ip, uint16_t port) {
     address_.sin_family = AF_INET;
     address_.sin_addr.s_addr = inet_addr(ip);
@@ -21,4 +23,8 @@ const char* InetAddress::ip() const {
 
 uint16_t InetAddress::port() const {
     return ntohs(address_.sin_port);
+}
+
+void InetAddress::setAddress(const sockaddr_in another) {
+    address_ = another;
 }

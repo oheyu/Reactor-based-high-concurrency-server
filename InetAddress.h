@@ -12,6 +12,8 @@ private:
     struct sockaddr_in address_;
 
 public:
+    InetAddress();
+
     InetAddress(const char* ip, uint16_t port);    // For bind();
 
     InetAddress(const sockaddr_in address);               // For accept();
@@ -23,6 +25,8 @@ public:
     const char* ip() const;
 
     uint16_t port() const;
+
+    void setAddress(const sockaddr_in another);
 };
 
 #endif

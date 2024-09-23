@@ -1,6 +1,7 @@
 #ifndef EPOLL_H
 #define EPOLL_H
 
+#include "Channel.h"
 #include <sys/epoll.h>
 #include <unistd.h>
 #include <iostream>
@@ -8,6 +9,8 @@
 #include <cstdint>
 #include <vector>
 
+
+class Channel;
 
 class Epoll {
 private:
@@ -20,9 +23,9 @@ public:
 
     ~Epoll();
     
-    void collectInterests(int fd, uint32_t op);
+    void addChannel(Channel* channel);
 
-    std::vector<epoll_event> loop(int timeout = -1);
+    std::vector<Channel*> loop(int timeout = -1);
 };
 
 #endif // !EPOLL_H

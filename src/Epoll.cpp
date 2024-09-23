@@ -12,20 +12,28 @@ Epoll::Epoll() {
 
 Epoll::~Epoll() {::close(epoll_fd_);}
 
-void Epoll::collectInterests(int fd, uint32_t op) {
+void Epoll::addChannel(Channel* channel) {
     struct epoll_event interest_event;
-    interest_event.data.fd = fd;
-    interest_event.events = op;       // Adopt default LT.
-
-    if (epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, fd, &interest_event) == -1) {
-        std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
-            << "-> epoll_ctl() error: " << std::strerror(errno) << std::endl;
-        exit(-1);
+    interest_event.data.ptr = channel;
+    interest_event.events = channel->events();
+    if (channel->isInEpoll()) {
+        if (epoll_ctl(epoll_fd_, EPOLL_CTL_MOD, channel->fd(), &interest_event) == -1) {
+            std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
+                << "-> epoll_ctl() error: " << std::strerror(errno) << std::endl;
+            exit(-1);
+        }
+    } else {
+        if (epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, channel->fd(), &interest_event) == -1) {
+            std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
+                << "-> epoll_ctl() error: " << std::strerror(errno) << std::endl;
+            exit(-1);
+        }
+        channel->setInEpoll();
     }
 }
 
-std::vector<epoll_event> Epoll::loop(int timeout) {
-    std::vector<epoll_event> get_events;
+std::vector<Channel*> Epoll::loop(int timeout) {
+    std::vector<Channel*> get_channels;
 
     bzero(events_, sizeof(events_));
 
@@ -38,10 +46,14 @@ std::vector<epoll_event> Epoll::loop(int timeout) {
     }
     if (in_fd == 0) {
         std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__ << "-> time out" << std::endl;
-        return get_events;
+        return get_channels;
     }
 
-    for (int i {0}; i < in_fd; ++i) {get_events.push_back(events_[i]);}
+    for (int i {0}; i < in_fd; ++i) {
+        Channel* channel {reinterpret_cast<Channel*>(events_[i].data.ptr)};
+        channel->setRevents(events_[i].events);
+        get_channels.push_back(channel);
+    }
 
-    return get_events;
+    return get_channels;
 }

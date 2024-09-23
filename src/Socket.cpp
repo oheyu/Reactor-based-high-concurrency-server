@@ -15,7 +15,7 @@ Socket::Socket(int fd): fd_(fd) {}
 
 Socket::~Socket() {::close(fd_);}
 
-int Socket::getFd() const {return fd_;}
+int Socket::fd() const {return fd_;}
 
 void Socket::setReuseAddr(bool toggle) {
     int opt = toggle ? 1 : 0;

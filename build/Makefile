@@ -142,6 +142,30 @@ server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
 
+src/Channel.o: src/Channel.cpp.o
+.PHONY : src/Channel.o
+
+# target to build an object file
+src/Channel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Channel.cpp.o
+.PHONY : src/Channel.cpp.o
+
+src/Channel.i: src/Channel.cpp.i
+.PHONY : src/Channel.i
+
+# target to preprocess a source file
+src/Channel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Channel.cpp.i
+.PHONY : src/Channel.cpp.i
+
+src/Channel.s: src/Channel.cpp.s
+.PHONY : src/Channel.s
+
+# target to generate assembly for a file
+src/Channel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Channel.cpp.s
+.PHONY : src/Channel.cpp.s
+
 src/Epoll.o: src/Epoll.cpp.o
 .PHONY : src/Epoll.o
 
@@ -272,6 +296,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... client"
 	@echo "... server"
+	@echo "... src/Channel.o"
+	@echo "... src/Channel.i"
+	@echo "... src/Channel.s"
 	@echo "... src/Epoll.o"
 	@echo "... src/Epoll.i"
 	@echo "... src/Epoll.s"

@@ -12,3 +12,6 @@ Encapsulate the contents like 'listen()', 'bind()' and 'setsockopt()'...
 
 ## Step-4: Add Epoll Class
 Same as before, encapsulate contents about epoll this time.(By the way, I've refactored the whole structure for this project between Step-3 and Step-4)
+
+## Step-5: Add Channel Class
+Things are going to be complex.

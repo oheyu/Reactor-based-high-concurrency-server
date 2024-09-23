@@ -23,7 +23,7 @@ public:
 
     ~Socket();
 
-    int getFd() const;
+    int fd() const;
 
     void setReuseAddr(bool toggle);
 

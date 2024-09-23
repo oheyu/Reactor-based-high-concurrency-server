@@ -5,7 +5,10 @@ CMakeFiles/server.dir/src/Channel.cpp.o
  /home/aaron/Projects/Reactor_Server/src/Channel.cpp
  /home/aaron/Projects/Reactor_Server/include/Channel.h
  /home/aaron/Projects/Reactor_Server/include/Epoll.h
+ /home/aaron/Projects/Reactor_Server/include/InetAddress.h
+ /home/aaron/Projects/Reactor_Server/include/Socket.h
  /usr/include/alloca.h
+ /usr/include/arpa/inet.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
@@ -108,6 +111,8 @@ CMakeFiles/server.dir/src/Channel.cpp.o
  /usr/include/linux/posix_types.h
  /usr/include/linux/stddef.h
  /usr/include/locale.h
+ /usr/include/netinet/in.h
+ /usr/include/netinet/tcp.h
  /usr/include/pthread.h
  /usr/include/sched.h
  /usr/include/stdc-predef.h
@@ -139,6 +144,7 @@ CMakeFiles/server.dir/src/Channel.cpp.o
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
+ /usr/include/x86_64-linux-gnu/bits/in.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/x86_64-linux-gnu/bits/locale.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h

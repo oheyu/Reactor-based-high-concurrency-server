@@ -15,3 +15,5 @@ Same as before, encapsulate contents about epoll this time.(By the way, I've ref
 
 ## Step-5: Add Channel Class
 Things are going to be complex.
+
+## Step-5(1): Optimize Channel Class

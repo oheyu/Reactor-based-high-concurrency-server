@@ -6,6 +6,7 @@
 #include "Socket.h"
 #include <sys/socket.h>
 #include <cstdint>
+#include <functional>
 
 
 class Epoll;
@@ -17,10 +18,10 @@ private:
     bool is_in_epoll_ {false};
     uint32_t events_ {0};
     uint32_t revents_ {0};
-    bool is_listen_ {false};
+    std::function<void()> read_callback_;
 
 public:
-    Channel(Epoll* epoll, int fd, bool is_listen);
+    Channel(Epoll* epoll, int fd);
 
     ~Channel();
 
@@ -40,7 +41,13 @@ public:
 
     uint32_t revents() const;
 
-    void handleEvent(Socket* server_socket);
+    void handleEvent();
+
+    void newConnection(Socket* Server_socket);
+
+    void onMessage();
+
+    void setReadCallback(std::function<void()> func);
 };
 
 #endif // !CHANNEL_H

@@ -33,13 +33,14 @@ int main(int argc, char* argv[]) {
     server_socket.listen();
 
     Epoll epoll_sniper;
-    Channel* server_channel {new Channel(&epoll_sniper, server_socket.fd(), true)};
+    Channel* server_channel {new Channel(&epoll_sniper, server_socket.fd())};
+    server_channel->setReadCallback(std::bind(&Channel::newConnection, server_channel, &server_socket));
     server_channel->enableReading();
 
     while (true) {
         std::vector<Channel*> results {epoll_sniper.loop()};
 
-        for (auto& result : results) {result->handleEvent(&server_socket);}
+        for (auto& result : results) {result->handleEvent();}
     }
 
     return 0;

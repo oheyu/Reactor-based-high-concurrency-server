@@ -32,3 +32,6 @@ The more higher abstraction.
 
 ### Step-9: Add Acceptor Class
 Abstract connection process in TcpServer.
+
+### Step-10: Add Connection Class
+The same as Acceptor.

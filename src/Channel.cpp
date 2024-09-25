@@ -51,10 +51,7 @@ void Channel::newConnection(Socket* server_socket) {
     std::cout << "Establish connection with <" << client_address.ip() 
         << "> on <" << client_address.port() << "> using <" << client_socket->fd() << ">" << std::endl;
 
-    Channel* client_channel {new Channel(loop_, client_socket->fd())};
-    client_channel->setReadCallback(std::bind(&Channel::onMessage, client_channel));
-    client_channel->enableEdgeTrigger();
-    client_channel->enableReading();
+    Connection* connection {new Connection(loop_, client_socket)};
 }
 
 void Channel::onMessage() {

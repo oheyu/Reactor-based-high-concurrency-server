@@ -5,6 +5,7 @@
 #include "InetAddress.h"
 #include "Socket.h"
 #include "EventLoop.h"
+#include "Connection.h"
 #include <sys/socket.h>
 #include <cstdint>
 #include <functional>

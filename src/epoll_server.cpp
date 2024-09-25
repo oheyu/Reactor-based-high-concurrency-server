@@ -3,6 +3,7 @@
 #include "Epoll.h"
 #include "Channel.h"
 #include "EventLoop.h"
+#include "TcpServer.h"
 
 #include <iostream>
 #include <fcntl.h>
@@ -23,22 +24,9 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    Socket server_socket(createNonBlock());
-    server_socket.setReuseAddr(true);
-    server_socket.setReusePort(true);
-    server_socket.setTcpNoDelay(true);
-    server_socket.setKeepAlive(true);
+    TcpServer tcp_server(argv[1], atoi(argv[2]));
 
-    InetAddress server_address(argv[1], atoi(argv[2]));
-    server_socket.bind(server_address);
-    server_socket.listen();
-
-    EventLoop loop;
-    Channel* server_channel {new Channel(&loop, server_socket.fd())};
-    server_channel->setReadCallback(std::bind(&Channel::newConnection, server_channel, &server_socket));
-    server_channel->enableReading();
-
-    loop.run();
+    tcp_server.start();
 
     return 0;
 }

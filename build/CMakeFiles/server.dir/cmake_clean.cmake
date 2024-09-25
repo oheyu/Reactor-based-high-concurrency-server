@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/src/InetAddress.cpp.o.d"
   "CMakeFiles/server.dir/src/Socket.cpp.o"
   "CMakeFiles/server.dir/src/Socket.cpp.o.d"
+  "CMakeFiles/server.dir/src/TcpServer.cpp.o"
+  "CMakeFiles/server.dir/src/TcpServer.cpp.o.d"
   "CMakeFiles/server.dir/src/epoll_server.cpp.o"
   "CMakeFiles/server.dir/src/epoll_server.cpp.o.d"
 )

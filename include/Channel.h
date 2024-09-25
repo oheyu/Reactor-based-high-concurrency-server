@@ -21,6 +21,8 @@ private:
     uint32_t events_ {0};
     uint32_t revents_ {0};
     std::function<void()> read_callback_;
+    std::function<void()> close_callback_;
+    std::function<void()> error_callback_;
 
 public:
     Channel(EventLoop* loop, int fd);
@@ -48,6 +50,10 @@ public:
     void onMessage();
 
     void setReadCallback(std::function<void()> func);
+
+    void setCloseCallback(std::function<void()> func);
+
+    void setErrorCallback(std::function<void()> func);
 };
 
 #endif // !CHANNEL_H

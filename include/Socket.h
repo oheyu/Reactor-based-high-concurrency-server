@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
+#include <cstdint>
 
 
 int createNonBlock();
@@ -17,6 +18,8 @@ int createNonBlock();
 class Socket {
 private:
     const int fd_;
+    std::string ip_;
+    uint16_t port_;
 
 public:
     Socket(int fd);
@@ -24,6 +27,10 @@ public:
     ~Socket();
 
     int fd() const;
+
+    std::string ip() const;
+
+    uint16_t port() const;
 
     void setReuseAddr(bool toggle);
 

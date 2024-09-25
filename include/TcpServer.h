@@ -8,11 +8,13 @@
 #include "Acceptor.h"
 #include "Connection.h"
 #include <functional>
+#include <map>
 
 class TcpServer {
 private:
     EventLoop loop_;
     Acceptor* acceptor_;
+    std::map<int, Connection*> connections_;
 
 public:
     TcpServer(const char* ip, uint16_t port);
@@ -22,6 +24,10 @@ public:
     void start();
 
     void newConnection(Socket* client_socket);
+
+    void closeConnection(Connection* connection);
+
+    void errorConnection(Connection* connection);
 };
 
 #endif

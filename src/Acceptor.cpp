@@ -29,8 +29,6 @@ void Acceptor::newConnection() {
             << "-> connection error: " << std::strerror(errno) << std::endl;
         exit(-1);
     }
-    std::cout << "Establish connection with <" << client_address.ip() 
-        << "> on <" << client_address.port() << "> using <" << client_socket->fd() << ">" << std::endl;
     
     new_connection_(client_socket);
 }

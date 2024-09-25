@@ -28,15 +28,13 @@ uint32_t Channel::revents() const {return revents_;}
 
 void Channel::handleEvent() {
     if (revents_ & EPOLLRDHUP) {
-        std::cerr << "Client @ " << fd_ << " disconnect." << std::endl;
-        close(fd_); exit(-1);
+        close_callback_();exit(-1);
     } else if (revents_ & (EPOLLIN | EPOLLPRI)) {
         read_callback_();
     } else if (revents_ & EPOLLOUT) {
         // Accomplish later.
     } else {
-        std::cerr << "Error on " << fd_ << " anyway" << std::endl;
-        close(fd_);
+        error_callback_();
     }
 }
 
@@ -54,10 +52,13 @@ void Channel::onMessage() {
         } else if (readn == -1 && ((errno == EAGAIN) || (errno == EWOULDBLOCK))) {        // No data.
             break;
         } else if (readn == 0) {
-            std::cerr << "Client # " << fd_ << " disconnect." << std::endl;
-            close(fd_); break;
+            error_callback_(); break;
         }
     }
 }
 
 void Channel::setReadCallback(std::function<void()> func) {read_callback_ = func;}
+
+void Channel::setCloseCallback(std::function<void()> func) {close_callback_ = func;}
+
+void Channel::setErrorCallback(std::function<void()> func) {error_callback_ = func;}

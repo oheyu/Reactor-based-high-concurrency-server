@@ -40,20 +40,6 @@ void Channel::handleEvent() {
     }
 }
 
-void Channel::newConnection(Socket* server_socket) {
-    InetAddress client_address;
-    Socket* client_socket {new Socket(server_socket->accept(client_address))};
-    if (client_socket->fd() == -1) {
-        std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
-            << "-> connection error: " << std::strerror(errno) << std::endl;
-        exit(-1);
-    }
-    std::cout << "Establish connection with <" << client_address.ip() 
-        << "> on <" << client_address.port() << "> using <" << client_socket->fd() << ">" << std::endl;
-
-    Connection* connection {new Connection(loop_, client_socket)};
-}
-
 void Channel::onMessage() {
     char buffer[1024];
     while (true) {

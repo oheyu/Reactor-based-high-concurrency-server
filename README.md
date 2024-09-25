@@ -35,3 +35,6 @@ Abstract connection process in TcpServer.
 
 ### Step-10: Add Connection Class
 The same as Acceptor.
+
+### Step-11: Optimize callback function.
+Try to figure out the relationship beween different modules if you want to write various class correctly.

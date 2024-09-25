@@ -45,8 +45,6 @@ public:
 
     void handleEvent();
 
-    void newConnection(Socket* Server_socket);
-
     void onMessage();
 
     void setReadCallback(std::function<void()> func);

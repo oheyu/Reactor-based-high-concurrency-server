@@ -6,6 +6,7 @@
 #include "Socket.h"
 #include "Channel.h"
 #include "Acceptor.h"
+#include "Connection.h"
 #include <functional>
 
 class TcpServer {
@@ -19,6 +20,8 @@ public:
     ~TcpServer();
 
     void start();
+
+    void newConnection(Socket* client_socket);
 };
 
 #endif

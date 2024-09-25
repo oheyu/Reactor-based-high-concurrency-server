@@ -12,11 +12,29 @@ Acceptor::Acceptor(EventLoop* loop, const char* ip, uint16_t port) : loop_(loop)
     server_socket_->listen();
 
     accept_channel_ = new Channel(loop_, server_socket_->fd());
-    accept_channel_->setReadCallback(std::bind(&Channel::newConnection, accept_channel_, server_socket_));
+    accept_channel_->setReadCallback(std::bind(&Acceptor::newConnection, this));
     accept_channel_->enableReading();
 }
 
 Acceptor::~Acceptor() {
     delete server_socket_;
     delete accept_channel_;
+}
+
+void Acceptor::newConnection() {
+    InetAddress client_address;
+    Socket* client_socket {new Socket(server_socket_->accept(client_address))};
+    if (client_socket->fd() == -1) {
+        std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
+            << "-> connection error: " << std::strerror(errno) << std::endl;
+        exit(-1);
+    }
+    std::cout << "Establish connection with <" << client_address.ip() 
+        << "> on <" << client_address.port() << "> using <" << client_socket->fd() << ">" << std::endl;
+    
+    new_connection_(client_socket);
+}
+
+void Acceptor::setNewConnection(std::function<void(Socket*)> fn) {
+    new_connection_ = fn;
 }

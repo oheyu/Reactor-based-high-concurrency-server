@@ -2,6 +2,7 @@
 #include "Socket.h"
 #include "Epoll.h"
 #include "Channel.h"
+#include "EventLoop.h"
 
 #include <iostream>
 #include <fcntl.h>
@@ -32,16 +33,12 @@ int main(int argc, char* argv[]) {
     server_socket.bind(server_address);
     server_socket.listen();
 
-    Epoll epoll_sniper;
-    Channel* server_channel {new Channel(&epoll_sniper, server_socket.fd())};
+    EventLoop loop;
+    Channel* server_channel {new Channel(loop.createEpoll(), server_socket.fd())};
     server_channel->setReadCallback(std::bind(&Channel::newConnection, server_channel, &server_socket));
     server_channel->enableReading();
 
-    while (true) {
-        std::vector<Channel*> results {epoll_sniper.loop()};
-
-        for (auto& result : results) {result->handleEvent();}
-    }
+    loop.run();
 
     return 0;
 }

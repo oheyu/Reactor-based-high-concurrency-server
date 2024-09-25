@@ -20,3 +20,6 @@ Things are going to be complex.
 
 ## Step-6: Callback
 The first time to try callback using 'std::function' and 'std::bind'.
+
+## Step-7: Add EventLoop Class
+I don't know what to say. Just for encapsulation.

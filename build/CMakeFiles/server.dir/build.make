@@ -97,10 +97,24 @@ CMakeFiles/server.dir/src/Epoll.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Epoll.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Projects/Reactor_Server/src/Epoll.cpp -o CMakeFiles/server.dir/src/Epoll.cpp.s
 
+CMakeFiles/server.dir/src/EventLoop.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/src/EventLoop.cpp
+CMakeFiles/server.dir/src/EventLoop.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/EventLoop.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/EventLoop.cpp.o -MF CMakeFiles/server.dir/src/EventLoop.cpp.o.d -o CMakeFiles/server.dir/src/EventLoop.cpp.o -c /home/aaron/Projects/Reactor_Server/src/EventLoop.cpp
+
+CMakeFiles/server.dir/src/EventLoop.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/src/EventLoop.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aaron/Projects/Reactor_Server/src/EventLoop.cpp > CMakeFiles/server.dir/src/EventLoop.cpp.i
+
+CMakeFiles/server.dir/src/EventLoop.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/EventLoop.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Projects/Reactor_Server/src/EventLoop.cpp -o CMakeFiles/server.dir/src/EventLoop.cpp.s
+
 CMakeFiles/server.dir/src/InetAddress.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/InetAddress.cpp.o: /home/aaron/Projects/Reactor_Server/src/InetAddress.cpp
 CMakeFiles/server.dir/src/InetAddress.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/InetAddress.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/InetAddress.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/InetAddress.cpp.o -MF CMakeFiles/server.dir/src/InetAddress.cpp.o.d -o CMakeFiles/server.dir/src/InetAddress.cpp.o -c /home/aaron/Projects/Reactor_Server/src/InetAddress.cpp
 
 CMakeFiles/server.dir/src/InetAddress.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/server.dir/src/InetAddress.cpp.s: cmake_force
 CMakeFiles/server.dir/src/Socket.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/Socket.cpp.o: /home/aaron/Projects/Reactor_Server/src/Socket.cpp
 CMakeFiles/server.dir/src/Socket.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/Socket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/src/Socket.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/Socket.cpp.o -MF CMakeFiles/server.dir/src/Socket.cpp.o.d -o CMakeFiles/server.dir/src/Socket.cpp.o -c /home/aaron/Projects/Reactor_Server/src/Socket.cpp
 
 CMakeFiles/server.dir/src/Socket.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/server.dir/src/Socket.cpp.s: cmake_force
 CMakeFiles/server.dir/src/epoll_server.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Server/src/epoll_server.cpp
 CMakeFiles/server.dir/src/epoll_server.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/src/epoll_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/src/epoll_server.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/epoll_server.cpp.o -MF CMakeFiles/server.dir/src/epoll_server.cpp.o.d -o CMakeFiles/server.dir/src/epoll_server.cpp.o -c /home/aaron/Projects/Reactor_Server/src/epoll_server.cpp
 
 CMakeFiles/server.dir/src/epoll_server.cpp.i: cmake_force
@@ -143,6 +157,7 @@ CMakeFiles/server.dir/src/epoll_server.cpp.s: cmake_force
 server_OBJECTS = \
 "CMakeFiles/server.dir/src/Channel.cpp.o" \
 "CMakeFiles/server.dir/src/Epoll.cpp.o" \
+"CMakeFiles/server.dir/src/EventLoop.cpp.o" \
 "CMakeFiles/server.dir/src/InetAddress.cpp.o" \
 "CMakeFiles/server.dir/src/Socket.cpp.o" \
 "CMakeFiles/server.dir/src/epoll_server.cpp.o"
@@ -152,12 +167,13 @@ server_EXTERNAL_OBJECTS =
 
 /home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/src/Channel.cpp.o
 /home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/src/Epoll.cpp.o
+/home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/src/EventLoop.cpp.o
 /home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/src/InetAddress.cpp.o
 /home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/src/Socket.cpp.o
 /home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/src/epoll_server.cpp.o
 /home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/build.make
 /home/aaron/Projects/Reactor_Server/bin/server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable /home/aaron/Projects/Reactor_Server/bin/server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/aaron/Projects/Reactor_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable /home/aaron/Projects/Reactor_Server/bin/server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

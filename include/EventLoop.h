@@ -2,6 +2,10 @@
 #define EVENT_LOOP_H
 
 #include "Epoll.h"
+#include "Channel.h"
+
+class Channel;
+class Epoll;
 
 class EventLoop {
 private:
@@ -14,7 +18,7 @@ public:
 
     void run();
 
-    Epoll* createEpoll(); 
+    void addChannel(Channel* channel);
 };
 
 #endif

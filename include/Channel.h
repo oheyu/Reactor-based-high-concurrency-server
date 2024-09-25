@@ -4,24 +4,25 @@
 #include "Epoll.h"
 #include "InetAddress.h"
 #include "Socket.h"
+#include "EventLoop.h"
 #include <sys/socket.h>
 #include <cstdint>
 #include <functional>
 
 
-class Epoll;
+class EventLoop;
 
 class Channel {
 private:
     int fd_ {-1};
-    Epoll* epoll_ {nullptr};
+    EventLoop* loop_ {nullptr};
     bool is_in_epoll_ {false};
     uint32_t events_ {0};
     uint32_t revents_ {0};
     std::function<void()> read_callback_;
 
 public:
-    Channel(Epoll* epoll, int fd);
+    Channel(EventLoop* loop, int fd);
 
     ~Channel();
 

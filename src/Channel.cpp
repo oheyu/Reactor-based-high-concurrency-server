@@ -2,7 +2,7 @@
 
 
 
-Channel::Channel(Epoll* epoll, int fd) : epoll_(epoll), fd_(fd) {}
+Channel::Channel(EventLoop* loop, int fd) : loop_(loop), fd_(fd) {}
 
 // For 'epoll_' and 'fd_', you should only use them, but do not destroy them.
 Channel::~Channel() {}
@@ -13,7 +13,7 @@ void Channel::enableEdgeTrigger() {events_ |= EPOLLET;}
 
 void Channel::enableReading() {
     events_ |= EPOLLIN;
-    epoll_->addChannel(this);
+    loop_->addChannel(this);
 }
 
 void Channel::setInEpoll() {is_in_epoll_ = true;}
@@ -51,7 +51,7 @@ void Channel::newConnection(Socket* server_socket) {
     std::cout << "Establish connection with <" << client_address.ip() 
         << "> on <" << client_address.port() << "> using <" << client_socket->fd() << ">" << std::endl;
 
-    Channel* client_channel {new Channel(epoll_, client_socket->fd())};
+    Channel* client_channel {new Channel(loop_, client_socket->fd())};
     client_channel->setReadCallback(std::bind(&Channel::onMessage, client_channel));
     client_channel->enableEdgeTrigger();
     client_channel->enableReading();

@@ -23,3 +23,6 @@ The first time to try callback using 'std::function' and 'std::bind'.
 
 ## Step-7: Add EventLoop Class
 I don't know what to say. Just for encapsulation.
+
+## Step-7(1): Optimize EventLoop Class
+Just remember that the relationship between EventLoop and Channel is one-to-one.

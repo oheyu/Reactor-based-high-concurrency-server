@@ -11,4 +11,6 @@ void EventLoop::run() {
     }
 }
 
-Epoll* EventLoop::createEpoll() { return epoll_; }
+void EventLoop::addChannel(Channel* channel) {
+    epoll_->addChannel(channel);
+}

@@ -1069,6 +1069,7 @@ CMakeFiles/server.dir/src/Socket.cpp.o: /home/aaron/Projects/Reactor_Server/src/
 CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Server/src/epoll_server.cpp \
   /home/aaron/Projects/Reactor_Server/include/Channel.h \
   /home/aaron/Projects/Reactor_Server/include/Epoll.h \
+  /home/aaron/Projects/Reactor_Server/include/EventLoop.h \
   /home/aaron/Projects/Reactor_Server/include/InetAddress.h \
   /home/aaron/Projects/Reactor_Server/include/Socket.h \
   /usr/include/alloca.h \

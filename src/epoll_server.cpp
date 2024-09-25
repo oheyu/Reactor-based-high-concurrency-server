@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     server_socket.listen();
 
     EventLoop loop;
-    Channel* server_channel {new Channel(loop.createEpoll(), server_socket.fd())};
+    Channel* server_channel {new Channel(&loop, server_socket.fd())};
     server_channel->setReadCallback(std::bind(&Channel::newConnection, server_channel, &server_socket));
     server_channel->enableReading();
 

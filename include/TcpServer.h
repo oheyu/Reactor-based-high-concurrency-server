@@ -5,11 +5,13 @@
 #include "InetAddress.h"
 #include "Socket.h"
 #include "Channel.h"
+#include "Acceptor.h"
 #include <functional>
 
 class TcpServer {
 private:
     EventLoop loop_;
+    Acceptor* acceptor_;
 
 public:
     TcpServer(const char* ip, uint16_t port);

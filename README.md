@@ -29,3 +29,6 @@ Just remember that the relationship between EventLoop and Channel is one-to-one.
 
 ### Step-8: Add TcpServer Class
 The more higher abstraction.
+
+### Step-9: Add Acceptor Class
+Abstract connection process in TcpServer.

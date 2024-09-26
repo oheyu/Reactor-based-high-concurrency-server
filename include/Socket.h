@@ -32,6 +32,8 @@ public:
 
     uint16_t port() const;
 
+    void setIpPort(const std::string ip, uint16_t port);
+
     void setReuseAddr(bool toggle);
 
     void setReusePort(bool toggle);

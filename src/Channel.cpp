@@ -38,25 +38,6 @@ void Channel::handleEvent() {
     }
 }
 
-void Channel::onMessage() {
-    char buffer[1024];
-    while (true) {
-        bzero(buffer, sizeof(buffer));
-        ssize_t readn {recv(fd_, buffer, sizeof(buffer), 0)};
-        if (readn > 0) {
-            std::string message(buffer);
-            std::cout << "Receive \"" << message << "\" from " << fd_ << std::endl;
-            send(fd_, buffer, sizeof(buffer), 0);
-        } else if (readn == -1 && errno == EINTR) {       // Interrupt.
-            continue;
-        } else if (readn == -1 && ((errno == EAGAIN) || (errno == EWOULDBLOCK))) {        // No data.
-            break;
-        } else if (readn == 0) {
-            error_callback_(); break;
-        }
-    }
-}
-
 void Channel::setReadCallback(std::function<void()> func) {read_callback_ = func;}
 
 void Channel::setCloseCallback(std::function<void()> func) {close_callback_ = func;}

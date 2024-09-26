@@ -21,6 +21,8 @@ std::string Socket::ip() const {return ip_;}
 
 uint16_t Socket::port() const {return port_;}
 
+void Socket::setIpPort(const std::string ip, uint16_t port) {ip_ = ip; port_ = port;} 
+
 void Socket::setReuseAddr(bool toggle) {
     int opt = toggle ? 1 : 0;
     ::setsockopt(fd_, SOL_SOCKET, SO_REUSEADDR, &opt, static_cast<socklen_t>(sizeof(opt)));
@@ -47,8 +49,7 @@ void Socket::bind(const InetAddress& server_address) {
             << "-> bind socket error: " << std::strerror(errno) << std::endl;
         ::close(fd_); exit(-1);
     }
-    ip_ = server_address.ip();
-    port_ = server_address.port();
+    setIpPort(server_address.ip(), server_address.port());
 }
 
 void Socket::listen(int backlog) {
@@ -67,7 +68,5 @@ int Socket::accept(InetAddress& client_address) {
     socklen_t length {static_cast<socklen_t>(sizeof(peer_address))};
     int client_fd {::accept4(fd_, (struct sockaddr*)(&peer_address), &length, SOCK_NONBLOCK)};
     client_address.setAddress(peer_address);
-    ip_ = client_address.ip();
-    port_ = client_address.port();
     return client_fd;
 }

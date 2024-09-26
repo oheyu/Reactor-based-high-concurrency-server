@@ -29,7 +29,7 @@ void Acceptor::newConnection() {
             << "-> connection error: " << std::strerror(errno) << std::endl;
         exit(-1);
     }
-    
+    client_socket->setIpPort(client_address.ip(), client_address.port());
     new_connection_(client_socket);
 }
 

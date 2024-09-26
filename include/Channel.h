@@ -8,6 +8,7 @@
 #include "Connection.h"
 #include <sys/socket.h>
 #include <cstdint>
+#include <cstring>
 #include <functional>
 
 
@@ -46,8 +47,6 @@ public:
     uint32_t revents() const;
 
     void handleEvent();
-
-    void onMessage();
 
     void setReadCallback(std::function<void()> func);
 

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/aaron/Projects/Reactor_Server/src/Acceptor.cpp" "CMakeFiles/server.dir/src/Acceptor.cpp.o" "gcc" "CMakeFiles/server.dir/src/Acceptor.cpp.o.d"
+  "/home/aaron/Projects/Reactor_Server/src/Buffer.cpp" "CMakeFiles/server.dir/src/Buffer.cpp.o" "gcc" "CMakeFiles/server.dir/src/Buffer.cpp.o.d"
   "/home/aaron/Projects/Reactor_Server/src/Channel.cpp" "CMakeFiles/server.dir/src/Channel.cpp.o" "gcc" "CMakeFiles/server.dir/src/Channel.cpp.o.d"
   "/home/aaron/Projects/Reactor_Server/src/Connection.cpp" "CMakeFiles/server.dir/src/Connection.cpp.o" "gcc" "CMakeFiles/server.dir/src/Connection.cpp.o.d"
   "/home/aaron/Projects/Reactor_Server/src/Epoll.cpp" "CMakeFiles/server.dir/src/Epoll.cpp.o" "gcc" "CMakeFiles/server.dir/src/Epoll.cpp.o.d"

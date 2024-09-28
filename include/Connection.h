@@ -18,6 +18,7 @@ private:
     Channel* client_channel_;
     std::function<void(Connection*)> close_callback_;
     std::function<void(Connection*)> error_callback_;
+    std::function<void(Connection*, std::string)> process_message_callback_;
     Buffer input_buffer_;
     Buffer output_buffer_;
 
@@ -36,11 +37,17 @@ public:
 
     void errorCallback();
 
+    void writeCallback();
+
     void setCloseCallback(std::function<void(Connection*)> fn);
 
     void setErrorCallback(std::function<void(Connection*)> fn);
 
     void onMessage();
+
+    void setProcessMessageCallback (std::function<void(Connection*, std::string)> fn);
+
+    void send(const char* data, size_t size);
 };
 
 #endif // !CONNECTION_H

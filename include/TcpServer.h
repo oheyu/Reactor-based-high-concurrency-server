@@ -28,6 +28,8 @@ public:
     void closeConnection(Connection* connection);
 
     void errorConnection(Connection* connection);
+
+    void processMessage(Connection* conn, std::string message);
 };
 
 #endif

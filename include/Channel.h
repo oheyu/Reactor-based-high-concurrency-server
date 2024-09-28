@@ -24,6 +24,7 @@ private:
     std::function<void()> read_callback_;
     std::function<void()> close_callback_;
     std::function<void()> error_callback_;
+    std::function<void()> write_callback_;
 
 public:
     Channel(EventLoop* loop, int fd);
@@ -35,6 +36,12 @@ public:
     void enableEdgeTrigger();
 
     void enableReading();
+
+    void disableReading();
+
+    void enableWriting();
+
+    void disableWriting();
 
     void setInEpoll();
 
@@ -53,6 +60,9 @@ public:
     void setCloseCallback(std::function<void()> func);
 
     void setErrorCallback(std::function<void()> func);
+
+    void setWriteCallback(std::function<void()> func);
+    
 };
 
 #endif // !CHANNEL_H

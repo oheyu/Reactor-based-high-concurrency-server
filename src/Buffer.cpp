@@ -6,6 +6,8 @@ Buffer::~Buffer() {}
 
 void Buffer::append(const char* data, size_t size) {buffer_.append(data, size);}
 
+void Buffer::erase(size_t pos, size_t n) {buffer_.erase(pos, n);}
+
 size_t Buffer::size() {return buffer_.size();}
 
 const char* Buffer::data() {return buffer_.data();}

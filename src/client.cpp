@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sys/socket.h>
 #include <cstring>
+#include <cstdio>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
@@ -18,22 +19,33 @@ int main(int argc, char* argv[]) {
     server_address.sin_addr.s_addr = inet_addr(argv[1]);
     server_address.sin_port = htons(atoi(argv[2]));
     if (connect(client_fd, reinterpret_cast<struct sockaddr*>(&server_address), sizeof(server_address)) == -1) {
-        perror("connect() failed"); close(client_fd); return -1;
+        std::perror("connect() failed"); close(client_fd); return -1;
     }
     std::cout << "Connect OK" << std::endl;
 
     char buffer[1024];
-    while (true) {
-        std::cout << "Please enter message you want to send (enter 'quit' to stop): ";
-        memset(buffer, 0, sizeof(buffer)); std::cin.get(buffer, sizeof(buffer)).get();
-        if (strcmp(buffer, "quit") == 0) {close(client_fd); return 0;}
+    for (int i {0}; i < 5; ++i) {
+        std::memset(buffer, 0, sizeof(buffer));
+        std::snprintf(buffer, sizeof(buffer), "This is No.%d supergirl", i);
 
-        if (send(client_fd, buffer, strlen(buffer), 0) == -1) {
-            perror("send() failed"); close(client_fd); return -1;
+        char temp[1024];
+        std::memset(temp, 0, sizeof(buffer));
+
+        int len {static_cast<int>(std::strlen(buffer))};
+        std::memcpy(temp, &len, 4);
+        std::memcpy(temp + 4, buffer, len);
+
+        if (send(client_fd, temp, len + 4, 0) == -1) {
+            std::perror("send() failed"); close(client_fd); return -1;
         }
+    }
 
+    for (int i {0}; i < 5; ++i) {
+
+        int len;
+        recv(client_fd, &len, 4, 0);
         memset(buffer, 0, sizeof(buffer));
-        if (recv(client_fd, buffer, sizeof(buffer), 0) == -1) {
+        if (recv(client_fd, buffer, len, 0) == -1) {
             std::cerr << "recv() failed" << std::endl; close(client_fd); return -1;
         }
 

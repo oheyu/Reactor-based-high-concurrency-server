@@ -14,25 +14,34 @@ TcpServer::~TcpServer() {
 void TcpServer::start() {loop_.run();}
 
 void TcpServer::newConnection(Socket* client_socket) {
-    Connection* connection {new Connection(&loop_, client_socket)};
+    Connection* conn {new Connection(&loop_, client_socket)};
 
-    connection->setCloseCallback(std::bind(&TcpServer::closeConnection, this, std::placeholders::_1));
-    connection->setErrorCallback(std::bind(&TcpServer::errorConnection, this, std::placeholders::_1));
+    conn->setCloseCallback(std::bind(&TcpServer::closeConnection, this, std::placeholders::_1));
+    conn->setErrorCallback(std::bind(&TcpServer::errorConnection, this, std::placeholders::_1));
+    conn->setProcessMessageCallback(std::bind(&TcpServer::processMessage, this, std::placeholders::_1, std::placeholders::_2));
 
-    std::cout << "Establish connection with <" << connection->ip() 
-        << "> on <" << connection->port() << "> using <" << connection->fd() << ">" << std::endl;
+    std::cout << "Establish connection with <" << conn->ip() 
+        << "> on <" << conn->port() << "> using <" << conn->fd() << ">" << std::endl;
 
-    connections_[connection->fd()] = connection;
+    connections_[conn->fd()] = conn;
 }
 
-void TcpServer::closeConnection(Connection* connection) {
-    std::cerr << "Client @ " << connection->fd() << " disconnect." << std::endl;
-    connections_.erase(connection->fd());
-    delete connection;
+void TcpServer::closeConnection(Connection* conn) {
+    std::cerr << "Client @ " << conn->fd() << " disconnect." << std::endl;
+    connections_.erase(conn->fd());
+    delete conn;
 }
 
-void TcpServer::errorConnection(Connection* connection) {
-    std::cerr << "Client # " << connection->fd() << " disconnect." << std::endl;
-    connections_.erase(connection->fd());
-    delete connection;
+void TcpServer::errorConnection(Connection* conn) {
+    std::cerr << "Client # " << conn->fd() << " disconnect." << std::endl;
+    connections_.erase(conn->fd());
+    delete conn;
+}
+
+void TcpServer::processMessage(Connection* conn, std::string message) {
+    message = "reply + " + message;
+    int len = static_cast<int>(message.size());
+    std::string temp((char*)&len, 4);
+    temp.append(message);
+    conn->send(temp.data(), temp.size());
 }

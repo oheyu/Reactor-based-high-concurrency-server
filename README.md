@@ -50,3 +50,6 @@ We should know that the buffer we defined here is between buffer in kernel space
  
 ### Step-15: Optimize callback function again.
 Giving message back to TcpServer when epoll timeout.
+
+### Step-16: Abstract all things into higher level.
+Adding "EchoServer" on "TcpServer".

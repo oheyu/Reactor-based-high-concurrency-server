@@ -238,6 +238,30 @@ src/Connection.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Connection.cpp.s
 .PHONY : src/Connection.cpp.s
 
+src/EchoServer.o: src/EchoServer.cpp.o
+.PHONY : src/EchoServer.o
+
+# target to build an object file
+src/EchoServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/EchoServer.cpp.o
+.PHONY : src/EchoServer.cpp.o
+
+src/EchoServer.i: src/EchoServer.cpp.i
+.PHONY : src/EchoServer.i
+
+# target to preprocess a source file
+src/EchoServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/EchoServer.cpp.i
+.PHONY : src/EchoServer.cpp.i
+
+src/EchoServer.s: src/EchoServer.cpp.s
+.PHONY : src/EchoServer.s
+
+# target to generate assembly for a file
+src/EchoServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/EchoServer.cpp.s
+.PHONY : src/EchoServer.cpp.s
+
 src/Epoll.o: src/Epoll.cpp.o
 .PHONY : src/Epoll.o
 
@@ -428,6 +452,9 @@ help:
 	@echo "... src/Connection.o"
 	@echo "... src/Connection.i"
 	@echo "... src/Connection.s"
+	@echo "... src/EchoServer.o"
+	@echo "... src/EchoServer.i"
+	@echo "... src/EchoServer.s"
 	@echo "... src/Epoll.o"
 	@echo "... src/Epoll.i"
 	@echo "... src/Epoll.s"

@@ -1,4 +1,4 @@
-#include "TcpServer.h"
+#include "EchoServer.h"
 
 int main(int argc, char* argv[]) {
     // Prompt for usage.
@@ -8,9 +8,8 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    TcpServer tcp_server(argv[1], atoi(argv[2]));
-
-    tcp_server.start();
+    EchoServer echo_server(argv[1], atoi(argv[2])); 
+    echo_server.lanch();
 
     return 0;
 }

@@ -22,36 +22,55 @@ void TcpServer::newConnection(Socket* client_socket) {
     conn->setProcessMessageCallback(std::bind(&TcpServer::processMessage, this, std::placeholders::_1, std::placeholders::_2));
     conn->setSendCompleteCallback(std::bind(&TcpServer::sendComplete, this, std::placeholders::_1));
 
-    std::cout << "Establish connection with <" << conn->ip() 
-        << "> on <" << conn->port() << "> using <" << conn->fd() << ">" << std::endl;
-
     connections_[conn->fd()] = conn;
+
+    if (new_connection_callback_) new_connection_callback_(conn);
 }
 
 void TcpServer::closeConnection(Connection* conn) {
-    std::cerr << "Client @ " << conn->fd() << " disconnect." << std::endl;
+    if (close_connection_callback_) close_connection_callback_(conn);
     connections_.erase(conn->fd());
     delete conn;
 }
 
 void TcpServer::errorConnection(Connection* conn) {
-    std::cerr << "Client # " << conn->fd() << " disconnect." << std::endl;
+    if (error_connection_callback_) error_connection_callback_(conn);
     connections_.erase(conn->fd());
     delete conn;
 }
 
 void TcpServer::processMessage(Connection* conn, std::string message) {
-    message = "reply + " + message;
-    int len = static_cast<int>(message.size());
-    std::string temp((char*)&len, 4);
-    temp.append(message);
-    conn->send(temp.data(), temp.size());
+    if (process_message_callback_) process_message_callback_(conn, message);
 }
 
 void TcpServer::sendComplete(Connection* conn) {
-    std::cerr << "Send complete." << std::endl;
+    if (send_complete_callback_) send_complete_callback_(conn);
 }
 
 void TcpServer::epollTimeout(EventLoop* loop) {
-    std::cerr << "epoll_wait() timeout." << std::endl;
+    if (epoll_timeout_callback_) epoll_timeout_callback_(loop);
+}
+
+void TcpServer::setNewConnectionCallback(std::function<void(Connection*)> func) {
+    new_connection_callback_ = func;
+}
+
+void TcpServer::setCloseConnectionCallback(std::function<void(Connection*)> func) {
+    close_connection_callback_ = func;
+}
+
+void TcpServer::setErrorConnectionCallback(std::function<void(Connection*)> func) {
+    error_connection_callback_ = func;
+}
+
+void TcpServer::setProcessMessageCallback(std::function<void(Connection*, std::string)> func) {
+    process_message_callback_ = func;
+}
+
+void TcpServer::setSendCompleteCallback(std::function<void(Connection*)> func) {
+    send_complete_callback_ = func;
+}
+
+void TcpServer::setEpollTimeoutCallback(std::function<void(EventLoop*)> func) {
+    epoll_timeout_callback_ = func;
 }

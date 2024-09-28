@@ -31,6 +31,8 @@ void Connection::setErrorCallback(std::function<void(Connection*)> fn) {error_ca
 
 void Connection::setProcessMessageCallback (std::function<void(Connection*, std::string)> fn) {process_message_callback_ = fn;}
 
+void Connection::setSendCompleteCallback (std::function<void(Connection*)> fn) {send_complete_callback_ = fn;}
+
 void Connection::onMessage() {
     char buffer[1024];
     while (true) {
@@ -68,5 +70,8 @@ void Connection::send(const char* data, size_t size) {
 void Connection::writeCallback() {
     ssize_t writen {::send(fd(), output_buffer_.data(), output_buffer_.size(), 0)};
     if (writen > 0) output_buffer_.erase(0, writen);
-    if (output_buffer_.size() == 0) client_channel_->disableWriting();
+    if (output_buffer_.size() == 0) {
+        client_channel_->disableWriting();
+        send_complete_callback_(this);
+    }
 }

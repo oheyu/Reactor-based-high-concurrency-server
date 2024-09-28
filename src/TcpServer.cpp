@@ -4,6 +4,7 @@
 TcpServer::TcpServer(const char* ip, uint16_t port) {
     acceptor_ = new Acceptor(&loop_, ip, port);
     acceptor_->setNewConnection(std::bind(&TcpServer::newConnection, this, std::placeholders::_1));
+    loop_.setEpollTimeoutCallback(std::bind(&TcpServer::epollTimeout, this, std::placeholders::_1));
 }
 
 TcpServer::~TcpServer() {
@@ -19,6 +20,7 @@ void TcpServer::newConnection(Socket* client_socket) {
     conn->setCloseCallback(std::bind(&TcpServer::closeConnection, this, std::placeholders::_1));
     conn->setErrorCallback(std::bind(&TcpServer::errorConnection, this, std::placeholders::_1));
     conn->setProcessMessageCallback(std::bind(&TcpServer::processMessage, this, std::placeholders::_1, std::placeholders::_2));
+    conn->setSendCompleteCallback(std::bind(&TcpServer::sendComplete, this, std::placeholders::_1));
 
     std::cout << "Establish connection with <" << conn->ip() 
         << "> on <" << conn->port() << "> using <" << conn->fd() << ">" << std::endl;
@@ -44,4 +46,12 @@ void TcpServer::processMessage(Connection* conn, std::string message) {
     std::string temp((char*)&len, 4);
     temp.append(message);
     conn->send(temp.data(), temp.size());
+}
+
+void TcpServer::sendComplete(Connection* conn) {
+    std::cerr << "Send complete." << std::endl;
+}
+
+void TcpServer::epollTimeout(EventLoop* loop) {
+    std::cerr << "epoll_wait() timeout." << std::endl;
 }

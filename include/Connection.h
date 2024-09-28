@@ -19,6 +19,7 @@ private:
     std::function<void(Connection*)> close_callback_;
     std::function<void(Connection*)> error_callback_;
     std::function<void(Connection*, std::string)> process_message_callback_;
+    std::function<void(Connection*)> send_complete_callback_;
     Buffer input_buffer_;
     Buffer output_buffer_;
 
@@ -46,6 +47,8 @@ public:
     void onMessage();
 
     void setProcessMessageCallback (std::function<void(Connection*, std::string)> fn);
+
+    void setSendCompleteCallback (std::function<void(Connection*)> fn);
 
     void send(const char* data, size_t size);
 };

@@ -30,6 +30,10 @@ public:
     void errorConnection(Connection* connection);
 
     void processMessage(Connection* conn, std::string message);
+
+    void sendComplete(Connection* conn);
+
+    void epollTimeout(EventLoop* loop);
 };
 
 #endif

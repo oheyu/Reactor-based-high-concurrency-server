@@ -382,6 +382,30 @@ src/TcpServer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/TcpServer.cpp.s
 .PHONY : src/TcpServer.cpp.s
 
+src/ThreadPool.o: src/ThreadPool.cpp.o
+.PHONY : src/ThreadPool.o
+
+# target to build an object file
+src/ThreadPool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/ThreadPool.cpp.o
+.PHONY : src/ThreadPool.cpp.o
+
+src/ThreadPool.i: src/ThreadPool.cpp.i
+.PHONY : src/ThreadPool.i
+
+# target to preprocess a source file
+src/ThreadPool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/ThreadPool.cpp.i
+.PHONY : src/ThreadPool.cpp.i
+
+src/ThreadPool.s: src/ThreadPool.cpp.s
+.PHONY : src/ThreadPool.s
+
+# target to generate assembly for a file
+src/ThreadPool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/ThreadPool.cpp.s
+.PHONY : src/ThreadPool.cpp.s
+
 src/client.o: src/client.cpp.o
 .PHONY : src/client.o
 
@@ -470,6 +494,9 @@ help:
 	@echo "... src/TcpServer.o"
 	@echo "... src/TcpServer.i"
 	@echo "... src/TcpServer.s"
+	@echo "... src/ThreadPool.o"
+	@echo "... src/ThreadPool.i"
+	@echo "... src/ThreadPool.s"
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"

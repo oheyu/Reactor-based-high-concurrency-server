@@ -2,13 +2,15 @@
 #define ECHOSERVER_H
 
 #include "TcpServer.h"
+#include <unistd.h>
+#include <sys/syscall.h>
 
 class EchoServer {
 private:
     TcpServer tcp_server_;
 
 public:
-    EchoServer(const char* ip, uint16_t port);
+    EchoServer(const char* ip, uint16_t port, int num_threads = 3);
 
     ~EchoServer();
 

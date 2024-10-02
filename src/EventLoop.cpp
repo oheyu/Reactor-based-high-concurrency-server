@@ -6,7 +6,7 @@ EventLoop::~EventLoop() {delete epoll_;}
 
 void EventLoop::run() {
     while (true) {
-        std::vector<Channel*> results {epoll_->loop(10*1000)};
+        std::vector<Channel*> results {epoll_->loop()};
         if (results.size() == 0) epoll_timeout_callback_(this);
         for (auto& result : results) {result->handleEvent();}
     }

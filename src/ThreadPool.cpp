@@ -4,7 +4,7 @@
 ThreadPool::ThreadPool(size_t num_thread) : stop_(false) {
     for (size_t i {0}; i < num_thread; ++i) {
         threads_.emplace_back([this]{
-            std::cout << "Create thread: " << syscall(SYS_gettid) << std::endl;
+            // std::cout << "Create thread: " << syscall(SYS_gettid) << std::endl;
             while (stop_ == false) {
                 std::function<void()> task;
                 {
@@ -15,8 +15,8 @@ ThreadPool::ThreadPool(size_t num_thread) : stop_(false) {
                     if ((this->stop_ == true) && (this->task_queue_.empty() == true)) return;
                     task = std::move(this->task_queue_.front());
                     this->task_queue_.pop();
+                    std::cout << "Thread is " << syscall(SYS_gettid) << std::endl;
                 }
-                std::cout << "Thread is " << syscall(SYS_gettid) << std::endl;
                 task();
             }
         });

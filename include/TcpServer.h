@@ -9,10 +9,15 @@
 #include "Connection.h"
 #include <functional>
 #include <map>
+#include <vector>
+#include <ThreadPool.h>
 
 class TcpServer {
 private:
-    EventLoop loop_;
+    EventLoop* main_loop_;
+    std::vector<EventLoop*> sub_loops_;
+    ThreadPool* thread_pool_;
+    int num_threads_;
     Acceptor* acceptor_;
     std::map<int, Connection*> connections_;
     std::function<void(Connection*)> new_connection_callback_;
@@ -23,7 +28,7 @@ private:
     std::function<void(EventLoop*)> epoll_timeout_callback_;
 
 public:
-    TcpServer(const char* ip, uint16_t port);
+    TcpServer(const char* ip, uint16_t port, int num_threads);
 
     ~TcpServer();
 

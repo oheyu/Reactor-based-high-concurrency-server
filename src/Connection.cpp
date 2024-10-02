@@ -29,7 +29,9 @@ void Connection::setCloseCallback(std::function<void(Connection*)> fn) {close_ca
 
 void Connection::setErrorCallback(std::function<void(Connection*)> fn) {error_callback_ = fn;}
 
-void Connection::setProcessMessageCallback (std::function<void(Connection*, std::string)> fn) {process_message_callback_ = fn;}
+void Connection::setProcessMessageCallback (std::function<void(Connection*, std::string&)> fn) {
+    process_message_callback_ = fn;
+}
 
 void Connection::setSendCompleteCallback (std::function<void(Connection*)> fn) {send_complete_callback_ = fn;}
 
@@ -63,7 +65,7 @@ void Connection::onMessage() {
 }
 
 void Connection::send(const char* data, size_t size) {
-    output_buffer_.append(data, size);
+    output_buffer_.appendWithHead(data, size);
     client_channel_->enableWriting();
 }
 

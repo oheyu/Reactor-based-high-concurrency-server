@@ -26,12 +26,9 @@ void EchoServer::handleErrorConnection(Connection* conn) {
     std::cerr << "Client # " << conn->fd() << " disconnect." << std::endl;
 }
 
-void EchoServer::handleProcessMessage(Connection* conn, std::string message) {
+void EchoServer::handleProcessMessage(Connection* conn, std::string& message) {
     message = "reply + " + message;
-    int len {static_cast<int>(message.size())};
-    std::string temp((char*)&len, 4);
-    temp.append(message);
-    conn->send(temp.data(), temp.size());
+    conn->send(message.data(), message.size());
 }
 
 void EchoServer::handleSendComplete(Connection* conn) {

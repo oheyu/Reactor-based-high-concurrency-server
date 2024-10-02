@@ -20,7 +20,7 @@ public:
 
     void handleErrorConnection(Connection* conn);
 
-    void handleProcessMessage(Connection* conn, std::string message);
+    void handleProcessMessage(Connection* conn, std::string& message);
 
     void handleSendComplete(Connection* conn);
 

@@ -39,7 +39,7 @@ void TcpServer::errorConnection(Connection* conn) {
     delete conn;
 }
 
-void TcpServer::processMessage(Connection* conn, std::string message) {
+void TcpServer::processMessage(Connection* conn, std::string& message) {
     if (process_message_callback_) process_message_callback_(conn, message);
 }
 
@@ -63,7 +63,7 @@ void TcpServer::setErrorConnectionCallback(std::function<void(Connection*)> func
     error_connection_callback_ = func;
 }
 
-void TcpServer::setProcessMessageCallback(std::function<void(Connection*, std::string)> func) {
+void TcpServer::setProcessMessageCallback(std::function<void(Connection*, std::string&)> func) {
     process_message_callback_ = func;
 }
 

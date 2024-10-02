@@ -18,7 +18,7 @@ private:
     std::function<void(Connection*)> new_connection_callback_;
     std::function<void(Connection*)> close_connection_callback_;
     std::function<void(Connection*)> error_connection_callback_;
-    std::function<void(Connection*, std::string)> process_message_callback_;
+    std::function<void(Connection*, std::string&)> process_message_callback_;
     std::function<void(Connection*)> send_complete_callback_;
     std::function<void(EventLoop*)> epoll_timeout_callback_;
 
@@ -35,7 +35,7 @@ public:
 
     void errorConnection(Connection* connection);
 
-    void processMessage(Connection* conn, std::string message);
+    void processMessage(Connection* conn, std::string& message);
 
     void sendComplete(Connection* conn);
 
@@ -47,7 +47,7 @@ public:
 
     void setErrorConnectionCallback(std::function<void(Connection*)> func);
 
-    void setProcessMessageCallback(std::function<void(Connection*, std::string)> func);
+    void setProcessMessageCallback(std::function<void(Connection*, std::string&)> func);
 
     void setSendCompleteCallback(std::function<void(Connection*)> func);
 

@@ -2,6 +2,7 @@
 #define THTREAD_POOL_H
 
 #include <iostream>
+#include <cstdio>
 #include <vector>
 #include <thread>
 #include <queue>
@@ -20,9 +21,10 @@ private:
     std::mutex mutex_;
     std::condition_variable condition_;
     std::atomic_bool stop_;
+    std::string thread_type_;
 
 public:
-    ThreadPool(size_t num_thread);
+    ThreadPool(size_t num_thread, const std::string& thread_type);
 
     void addTask(std::function<void()> task);
 

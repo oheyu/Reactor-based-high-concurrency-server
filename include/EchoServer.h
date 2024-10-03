@@ -2,15 +2,17 @@
 #define ECHOSERVER_H
 
 #include "TcpServer.h"
+#include "ThreadPool.h"
 #include <unistd.h>
 #include <sys/syscall.h>
 
 class EchoServer {
 private:
     TcpServer tcp_server_;
+    ThreadPool thread_pool_;
 
 public:
-    EchoServer(const char* ip, uint16_t port, int num_threads = 3);
+    EchoServer(const char* ip, uint16_t port, int io_threads = 3, int work_threads = 5);
 
     ~EchoServer();
 
@@ -23,6 +25,8 @@ public:
     void handleErrorConnection(Connection* conn);
 
     void handleProcessMessage(Connection* conn, std::string& message);
+
+    void onMessage(Connection* conn, std::string& message);
 
     void handleSendComplete(Connection* conn);
 

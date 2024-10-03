@@ -8,7 +8,7 @@ TcpServer::TcpServer(const char* ip, uint16_t port, int num_threads) : num_threa
     acceptor_ = new Acceptor(main_loop_, ip, port);
     acceptor_->setNewConnection(std::bind(&TcpServer::newConnection, this, std::placeholders::_1));
 
-    thread_pool_ = new ThreadPool(num_threads_);
+    thread_pool_ = new ThreadPool(num_threads_, "IO");
     for (int i {0}; i < num_threads; ++i) {
         sub_loops_.push_back(new EventLoop);
         sub_loops_[i]->setEpollTimeoutCallback(std::bind(&TcpServer::epollTimeout, this, std::placeholders::_1));

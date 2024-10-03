@@ -31,6 +31,16 @@ void Channel::disableWriting() {
     loop_->addChannel(this);
 }
 
+void Channel::disableAll() {
+    events_ = 0;
+    loop_->addChannel(this);
+}
+
+void Channel::remove() {
+    disableAll();
+    loop_->removeChannel(this);
+}
+
 void Channel::setInEpoll() {is_in_epoll_ = true;}
 
 void Channel::setRevents(uint32_t event) {revents_ = event;}
@@ -43,7 +53,7 @@ uint32_t Channel::revents() const {return revents_;}
 
 void Channel::handleEvent() {
     if (revents_ & EPOLLRDHUP) {
-        close_callback_();exit(-1);
+        close_callback_();
     } else if (revents_ & (EPOLLIN | EPOLLPRI)) {
         read_callback_();
     } else if (revents_ & EPOLLOUT) {

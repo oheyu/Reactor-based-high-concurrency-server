@@ -43,6 +43,10 @@ public:
 
     void disableWriting();
 
+    void disableAll();
+
+    void remove();
+
     void setInEpoll();
 
     void setRevents(uint32_t event);

@@ -11,6 +11,7 @@
 #include <map>
 #include <vector>
 #include <ThreadPool.h>
+#include <memory>
 
 class TcpServer {
 private:
@@ -19,12 +20,12 @@ private:
     ThreadPool* thread_pool_;
     int num_threads_;
     Acceptor* acceptor_;
-    std::map<int, Connection*> connections_;
-    std::function<void(Connection*)> new_connection_callback_;
-    std::function<void(Connection*)> close_connection_callback_;
-    std::function<void(Connection*)> error_connection_callback_;
-    std::function<void(Connection*, std::string&)> process_message_callback_;
-    std::function<void(Connection*)> send_complete_callback_;
+    std::map<int, spConnection> connections_;
+    std::function<void(spConnection)> new_connection_callback_;
+    std::function<void(spConnection)> close_connection_callback_;
+    std::function<void(spConnection)> error_connection_callback_;
+    std::function<void(spConnection, std::string&)> process_message_callback_;
+    std::function<void(spConnection)> send_complete_callback_;
     std::function<void(EventLoop*)> epoll_timeout_callback_;
 
 public:
@@ -36,25 +37,25 @@ public:
 
     void newConnection(Socket* client_socket);
 
-    void closeConnection(Connection* connection);
+    void closeConnection(spConnection connection);
 
-    void errorConnection(Connection* connection);
+    void errorConnection(spConnection connection);
 
-    void processMessage(Connection* conn, std::string& message);
+    void processMessage(spConnection conn, std::string& message);
 
-    void sendComplete(Connection* conn);
+    void sendComplete(spConnection conn);
 
     void epollTimeout(EventLoop* loop);
     
-    void setNewConnectionCallback(std::function<void(Connection*)> func);
+    void setNewConnectionCallback(std::function<void(spConnection)> func);
 
-    void setCloseConnectionCallback(std::function<void(Connection*)> func);
+    void setCloseConnectionCallback(std::function<void(spConnection)> func);
 
-    void setErrorConnectionCallback(std::function<void(Connection*)> func);
+    void setErrorConnectionCallback(std::function<void(spConnection)> func);
 
-    void setProcessMessageCallback(std::function<void(Connection*, std::string&)> func);
+    void setProcessMessageCallback(std::function<void(spConnection, std::string&)> func);
 
-    void setSendCompleteCallback(std::function<void(Connection*)> func);
+    void setSendCompleteCallback(std::function<void(spConnection)> func);
 
     void setEpollTimeoutCallback(std::function<void(EventLoop*)> func);
 };

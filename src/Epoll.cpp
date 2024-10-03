@@ -32,6 +32,17 @@ void Epoll::addChannel(Channel* channel) {
     }
 }
 
+void Epoll::removeChannel(Channel* channel) {
+    if (channel->isInEpoll()) {
+        printf("Epoll::removeChannel()\n");
+        if (epoll_ctl(epoll_fd_, EPOLL_CTL_DEL, channel->fd(), 0) == -1) {
+            std::cerr << __FILE__ << " # " << __FUNCTION__ << " # " << __LINE__
+                << "-> epoll_ctl() error: " << std::strerror(errno) << std::endl;
+            exit(-1);
+        }
+    }
+}
+
 std::vector<Channel*> Epoll::loop(int timeout) {
     std::vector<Channel*> get_channels;
 

@@ -15,30 +15,30 @@ EchoServer::~EchoServer() {}
 
 void EchoServer::lanch() {tcp_server_.start();}
 
-void EchoServer::handleNewConnection(Connection* conn) {
+void EchoServer::handleNewConnection(spConnection conn) {
     std::cout << "Establish connection with <" << conn->ip() 
         << "> on <" << conn->port() << "> using <" << conn->fd() << ">" << std::endl;
     std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
 }
 
-void EchoServer::handleCloseConnection(Connection* conn) {
+void EchoServer::handleCloseConnection(spConnection conn) {
     std::cerr << "Client @ " << conn->fd() << " disconnect." << std::endl;
 }
 
-void EchoServer::handleErrorConnection(Connection* conn) {
+void EchoServer::handleErrorConnection(spConnection conn) {
     std::cerr << "Client # " << conn->fd() << " disconnect." << std::endl;
 }
 
-void EchoServer::handleProcessMessage(Connection* conn, std::string& message) {
+void EchoServer::handleProcessMessage(spConnection conn, std::string& message) {
     thread_pool_.addTask(std::bind(&EchoServer::onMessage, this, conn, message));
 }
 
-void EchoServer::onMessage(Connection* conn, std::string& message) {
+void EchoServer::onMessage(spConnection conn, std::string& message) {
     message = "reply + " + message;
     conn->send(message.data(), message.size());
 }
 
-void EchoServer::handleSendComplete(Connection* conn) {
+void EchoServer::handleSendComplete(spConnection conn) {
     std::cout << "All things were sent." << std::endl;
     std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl;
 }

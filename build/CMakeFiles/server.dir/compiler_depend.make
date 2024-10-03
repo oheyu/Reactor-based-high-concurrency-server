@@ -18,9 +18,16 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
+  /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -57,6 +64,9 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -67,11 +77,14 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
@@ -87,8 +100,10 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
@@ -98,6 +113,7 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/stdexcept \
@@ -430,9 +446,16 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
+  /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -469,6 +492,9 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -479,11 +505,14 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
@@ -499,8 +528,10 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
@@ -510,6 +541,7 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/stdexcept \
@@ -663,9 +695,16 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
+  /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -702,6 +741,9 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -712,11 +754,14 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
@@ -732,8 +777,10 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
@@ -743,6 +790,7 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/stdexcept \
@@ -901,7 +949,10 @@ CMakeFiles/server.dir/src/EchoServer.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
@@ -948,6 +999,7 @@ CMakeFiles/server.dir/src/EchoServer.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
@@ -966,7 +1018,9 @@ CMakeFiles/server.dir/src/EchoServer.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_queue.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
@@ -1009,6 +1063,7 @@ CMakeFiles/server.dir/src/EchoServer.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
@@ -1171,9 +1226,16 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
+  /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -1210,6 +1272,9 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -1220,11 +1285,14 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
@@ -1240,8 +1308,10 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
@@ -1251,6 +1321,7 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/stdexcept \
@@ -1404,9 +1475,16 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
+  /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -1443,6 +1521,9 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -1453,11 +1534,14 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
@@ -1473,8 +1557,10 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
@@ -1484,6 +1570,7 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/stdexcept \
@@ -2015,7 +2102,10 @@ CMakeFiles/server.dir/src/TcpServer.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
@@ -2062,6 +2152,7 @@ CMakeFiles/server.dir/src/TcpServer.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
@@ -2080,7 +2171,9 @@ CMakeFiles/server.dir/src/TcpServer.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_queue.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
@@ -2123,6 +2216,7 @@ CMakeFiles/server.dir/src/TcpServer.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
@@ -2524,7 +2618,10 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
@@ -2571,6 +2668,7 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
@@ -2589,7 +2687,9 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_queue.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
@@ -2632,6 +2732,7 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
@@ -2803,10 +2904,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/map:
 
-/usr/include/c++/13/ext/concurrence.h:
-
-/usr/include/c++/13/ext/aligned_buffer.h:
-
 /usr/include/c++/13/deque:
 
 /usr/include/c++/13/ctime:
@@ -2819,29 +2916,19 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/stl_relops.h:
 
-/home/aaron/Projects/Reactor_Server/src/Socket.cpp:
+/usr/include/c++/13/bits/stl_map.h:
 
-/usr/include/strings.h:
+/usr/include/c++/13/utility:
 
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/include/c++/13/bits/stl_heap.h:
 
-/usr/include/stdlib.h:
+/usr/include/c++/13/bits/stl_deque.h:
 
-/usr/include/pthread.h:
+/usr/include/c++/13/bits/std_mutex.h:
 
-/usr/include/netinet/in.h:
+/usr/include/c++/13/bits/erase_if.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/locale.h:
-
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/usr/include/stdint.h:
-
-/usr/include/endian.h:
+/usr/include/c++/13/bits/deque.tcc:
 
 /usr/include/c++/13/bits/streambuf.tcc:
 
@@ -2869,11 +2956,19 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/ext/alloc_traits.h:
 
+/usr/include/c++/13/bits/std_thread.h:
+
+/usr/include/c++/13/initializer_list:
+
 /usr/include/c++/13/iostream:
 
 /usr/include/c++/13/ext/type_traits.h:
 
 /usr/include/c++/13/ext/string_conversions.h:
+
+/usr/include/c++/13/ext/concurrence.h:
+
+/home/aaron/Projects/Reactor_Server/src/Connection.cpp:
 
 /usr/include/c++/13/cctype:
 
@@ -2886,8 +2981,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/c++/13/debug/assertions.h:
-
-/usr/include/c++/13/cstring:
 
 /usr/include/c++/13/cstdlib:
 
@@ -2903,29 +2996,35 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/clocale:
 
-/usr/include/c++/13/bits/allocated_ptr.h:
-
 /usr/include/c++/13/cerrno:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
-/usr/include/c++/13/bits/unique_ptr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
 /usr/include/c++/13/bits/vector.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/13/bits/utility.h:
 
 /usr/include/c++/13/bits/stl_function.h:
 
-/usr/include/c++/13/bits/stl_map.h:
+/usr/include/c++/13/cstring:
 
-/usr/include/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_types.h:
+/usr/include/c++/13/bits/unique_ptr.h:
+
+/usr/include/c++/13/bits/align.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/c++/13/memory:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/c++/13/bits/stl_raw_storage_iter.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/c++/13/bits/functexcept.h:
 
@@ -2935,9 +3034,87 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/allocator.h:
 
-/usr/include/c++/13/bits/concept_check.h:
+/usr/include/c++/13/bits/stl_algobase.h:
 
-/usr/include/c++/13/bits/alloc_traits.h:
+/usr/include/c++/13/exception:
+
+/usr/include/c++/13/bits/stl_pair.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
+
+/usr/include/locale.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/c++/13/bits/basic_ios.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/c++/13/ext/numeric_traits.h:
+
+/usr/include/c++/13/bits/stl_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/c++/13/bits/locale_facets.h:
+
+/usr/include/c++/13/bits/stl_construct.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/c++/13/type_traits:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
+
+/usr/include/c++/13/bit:
+
+/usr/include/c++/13/bits/basic_string.tcc:
+
+/usr/include/c++/13/stdexcept:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/c++/13/bits/move.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/backward/binders.h:
 
 /usr/include/features-time64.h:
 
@@ -2946,78 +3123,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/asm-generic/socket.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/include/linux/stddef.h:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/c++/13/bits/ptr_traits.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
-
-/usr/include/c++/13/bits/basic_ios.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/c++/13/bits/invoke.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/c++/13/bits/stringfwd.h:
-
-/usr/include/c++/13/backward/binders.h:
-
-/usr/include/features.h:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/x86_64-linux-gnu/sys/epoll.h:
-
-/usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/c++/13/bits/cpp_type_traits.h:
-
-/home/aaron/Projects/Reactor_Server/src/Epoll.cpp:
-
-/usr/include/c++/13/string:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/home/aaron/Projects/Reactor_Server/include/EventLoop.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
-
-/usr/include/c++/13/bits/move.h:
-
-/usr/include/asm-generic/sockios.h:
-
-/usr/include/c++/13/bits/stl_construct.h:
-
-/usr/include/c++/13/bits/std_mutex.h:
-
-/usr/include/c++/13/type_traits:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/bits/localefwd.h:
-
-/usr/include/x86_64-linux-gnu/bits/socket_type.h:
 
 /usr/include/c++/13/ios:
 
@@ -3041,25 +3146,43 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/iosfwd:
 
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
 /usr/include/arpa/inet.h:
 
 /usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/c++/13/bits/new_allocator.h:
 
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
 /usr/include/c++/13/bits/atomic_base.h:
 
-/usr/include/c++/13/bits/istream.tcc:
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/include/c++/13/bits/exception_ptr.h:
+/usr/include/c++/13/bits/postypes.h:
 
-/usr/include/string.h:
+/home/aaron/Projects/Reactor_Server/include/InetAddress.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
+/usr/include/c++/13/backward/auto_ptr.h:
+
 /home/aaron/Projects/Reactor_Server/include/Channel.h:
+
+/home/aaron/Projects/Reactor_Server/include/EventLoop.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
+
+/usr/include/c++/13/bits/cpp_type_traits.h:
+
+/home/aaron/Projects/Reactor_Server/src/Epoll.cpp:
+
+/usr/include/c++/13/string:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
 /home/aaron/Projects/Reactor_Server/include/Socket.h:
 
@@ -3067,9 +3190,31 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/include/c++/13/bits/basic_string.tcc:
-
 /usr/include/alloca.h:
+
+/usr/include/c++/13/atomic:
+
+/usr/include/c++/13/bits/invoke.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/c++/13/bits/exception_ptr.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/c++/13/bits/localefwd.h:
+
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/linux/posix_types.h:
 
 /usr/include/c++/13/bits/exception.h:
 
@@ -3081,11 +3226,15 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
+
 /usr/include/c++/13/tuple:
 
 /usr/include/c++/13/bits/nested_exception.h:
-
-/usr/include/linux/close_range.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
@@ -3115,51 +3264,55 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
-/home/aaron/Projects/Reactor_Server/include/InetAddress.h:
+/usr/include/features.h:
 
-/usr/include/c++/13/bits/postypes.h:
+/usr/include/c++/13/bits/basic_string.h:
 
-/usr/include/c++/13/bits/uses_allocator.h:
+/usr/include/x86_64-linux-gnu/sys/epoll.h:
 
-/usr/include/c++/13/stdexcept:
-
-/usr/include/linux/errno.h:
+/usr/include/linux/close_range.h:
 
 /usr/include/c++/13/debug/debug.h:
 
-/usr/include/c++/13/bits/refwrap.h:
+/usr/include/linux/errno.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/c++/13/exception:
-
-/usr/include/sched.h:
+/usr/include/pthread.h:
 
 /usr/include/wctype.h:
 
-/usr/include/c++/13/bits/stl_pair.h:
+/usr/include/sched.h:
 
-/usr/include/x86_64-linux-gnu/bits/errno.h:
+/usr/include/endian.h:
 
-/usr/include/c++/13/bits/stl_algobase.h:
+/usr/include/stdint.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_types.h:
+
+/usr/include/stdio.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/string.h:
+
+/home/aaron/Projects/Reactor_Server/src/Socket.cpp:
+
+/usr/include/strings.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/unistd.h:
 
-/usr/include/x86_64-linux-gnu/asm/socket.h:
-
 /usr/include/c++/13/cwchar:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
+/usr/include/c++/13/bits/shared_ptr_base.h:
 
-/usr/include/c++/13/ext/numeric_traits.h:
-
-/usr/include/c++/13/bits/stl_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+/usr/include/wchar.h:
 
 /usr/include/c++/13/cwctype:
 
@@ -3177,8 +3330,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/include/c++/13/bits/deque.tcc:
-
 /usr/include/c++/13/bits/requires_hosted.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
@@ -3186,10 +3337,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/c++/13/limits:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
@@ -3215,10 +3362,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/c++/13/bits/shared_ptr.h:
-
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
@@ -3241,11 +3384,9 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/asm-generic/errno.h:
 
@@ -3265,8 +3406,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
-
 /usr/include/c++/13/bits/exception_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
@@ -3277,9 +3416,9 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 
-/usr/include/c++/13/bits/char_traits.h:
-
 /usr/include/c++/13/bits/std_function.h:
+
+/usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
@@ -3311,8 +3450,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
-/home/aaron/Projects/Reactor_Server/src/Connection.cpp:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
 /home/aaron/Projects/Reactor_Server/include/EchoServer.h:
@@ -3323,28 +3460,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /home/aaron/Projects/Reactor_Server/include/ThreadPool.h:
 
-/usr/include/c++/13/atomic:
-
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/13/bits/chrono.h:
-
-/usr/include/c++/13/bits/erase_if.h:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/usr/include/c++/13/bits/parse_numbers.h:
-
-/usr/include/wchar.h:
-
-/usr/include/c++/13/bits/shared_ptr_base.h:
-
-/usr/include/c++/13/initializer_list:
-
-/usr/include/c++/13/bits/std_thread.h:
-
-/usr/include/c++/13/bits/stl_deque.h:
-
-/usr/include/c++/13/utility:
-
-/usr/include/c++/13/bits/stl_heap.h:

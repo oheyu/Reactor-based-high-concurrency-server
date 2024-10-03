@@ -18,17 +18,17 @@ public:
 
     void lanch();
 
-    void handleNewConnection(Connection* conn);
+    void handleNewConnection(spConnection conn);
 
-    void handleCloseConnection(Connection* conn);
+    void handleCloseConnection(spConnection conn);
 
-    void handleErrorConnection(Connection* conn);
+    void handleErrorConnection(spConnection conn);
 
-    void handleProcessMessage(Connection* conn, std::string& message);
+    void handleProcessMessage(spConnection conn, std::string& message);
 
-    void onMessage(Connection* conn, std::string& message);
+    void onMessage(spConnection conn, std::string& message);
 
-    void handleSendComplete(Connection* conn);
+    void handleSendComplete(spConnection conn);
 
     void handleEpollTimeout(EventLoop* loop);
 };

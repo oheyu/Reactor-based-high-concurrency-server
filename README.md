@@ -60,3 +60,6 @@ Nothing to show here, a little bit simple.
 ### Step-18: Adjust to multi-thread.
 
 ### Step-19: Add Work Thread.
+
+### Step-20: Optimize with smart pointer.
+This step, mostly for life of object. I've used shared-ptr and unique-ptr. But the latter caused default, and I have no idea to solve it.

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <cstring>
 #include <cstdint>
+#include <cstdio>
 #include <vector>
 
 
@@ -24,6 +25,8 @@ public:
     ~Epoll();
     
     void addChannel(Channel* channel);
+
+    void removeChannel(Channel* channel);
 
     std::vector<Channel*> loop(int timeout = -1);
 };

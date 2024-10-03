@@ -16,7 +16,7 @@ public:
 
     InetAddress(const char* ip, uint16_t port);    // For bind();
 
-    InetAddress(const sockaddr_in address);               // For accept();
+    InetAddress(const sockaddr_in address);        // For accept();
 
     ~InetAddress();
 

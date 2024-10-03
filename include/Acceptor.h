@@ -6,12 +6,13 @@
 #include "Channel.h"
 #include "Connection.h"
 #include <functional>
+#include <memory>
 
 class Acceptor {
 private:
     EventLoop* loop_;
-    Socket* server_socket_;
-    Channel* accept_channel_;
+    Socket server_socket_;
+    Channel accept_channel_;
     std::function<void(Socket*)> new_connection_;
 
 public:

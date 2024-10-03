@@ -1,6 +1,7 @@
 #include "Connection.h"
 
-Connection::Connection(EventLoop* loop, Socket* client_socket) : loop_(loop), client_socket_(client_socket) {
+Connection::Connection(EventLoop* loop, Socket* client_socket) 
+    :loop_(loop), client_socket_(client_socket), disconnect_(false) {
     client_channel_ = new Channel(loop_, client_socket_->fd());
     client_channel_->setReadCallback(std::bind(&Connection::onMessage, this));
     client_channel_->setCloseCallback(std::bind(&Connection::closeCallback, this));
@@ -21,19 +22,19 @@ std::string Connection::ip() const {return client_socket_->ip();}
 
 uint16_t Connection::port() const {return client_socket_->port();}
 
-void Connection::closeCallback() {close_callback_(this);}
+void Connection::closeCallback() {disconnect_ = true; client_channel_->remove(); close_callback_(shared_from_this());}
 
-void Connection::errorCallback() {error_callback_(this);}
+void Connection::errorCallback() {disconnect_ = true; client_channel_->remove(); error_callback_(shared_from_this());}
 
-void Connection::setCloseCallback(std::function<void(Connection*)> fn) {close_callback_ = fn;}
+void Connection::setCloseCallback(std::function<void(spConnection)> fn) {close_callback_ = fn;}
 
-void Connection::setErrorCallback(std::function<void(Connection*)> fn) {error_callback_ = fn;}
+void Connection::setErrorCallback(std::function<void(spConnection)> fn) {error_callback_ = fn;}
 
-void Connection::setProcessMessageCallback (std::function<void(Connection*, std::string&)> fn) {
+void Connection::setProcessMessageCallback (std::function<void(spConnection, std::string&)> fn) {
     process_message_callback_ = fn;
 }
 
-void Connection::setSendCompleteCallback (std::function<void(Connection*)> fn) {send_complete_callback_ = fn;}
+void Connection::setSendCompleteCallback (std::function<void(spConnection)> fn) {send_complete_callback_ = fn;}
 
 void Connection::onMessage() {
     char buffer[1024];
@@ -55,7 +56,7 @@ void Connection::onMessage() {
                 input_buffer_.erase(0, len + 4);
                 std::cout << "Receive \"" << message << "\" from " << fd() << std::endl;
 
-                process_message_callback_(this, message);
+                process_message_callback_(shared_from_this(), message);
             }
             break;
         } else if (readn == 0) {
@@ -65,6 +66,7 @@ void Connection::onMessage() {
 }
 
 void Connection::send(const char* data, size_t size) {
+    if (disconnect_ == true) {printf("Client disconect, send() returned.\n"); return;}
     output_buffer_.appendWithHead(data, size);
     client_channel_->enableWriting();
 }
@@ -74,6 +76,6 @@ void Connection::writeCallback() {
     if (writen > 0) output_buffer_.erase(0, writen);
     if (output_buffer_.size() == 0) {
         client_channel_->disableWriting();
-        send_complete_callback_(this);
+        send_complete_callback_(shared_from_this());
     }
 }

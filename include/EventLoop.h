@@ -22,6 +22,8 @@ public:
 
     void addChannel(Channel* channel);
 
+    void removeChannel(Channel* channel);
+
     void setEpollTimeoutCallback(std::function<void(EventLoop*)> func);
 };
 

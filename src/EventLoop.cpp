@@ -16,6 +16,10 @@ void EventLoop::addChannel(Channel* channel) {
     epoll_->addChannel(channel);
 }
 
+void EventLoop::removeChannel(Channel* channel) {
+    epoll_->removeChannel(channel);
+}
+
 void EventLoop::setEpollTimeoutCallback(std::function<void(EventLoop*)> func) {
     epoll_timeout_callback_ = func;
 }

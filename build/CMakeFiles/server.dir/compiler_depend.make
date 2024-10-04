@@ -34,10 +34,12 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -58,6 +60,7 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/bits/new_allocator.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
@@ -69,14 +72,18 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -84,6 +91,7 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
@@ -95,10 +103,12 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cstring \
+  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -113,9 +123,13 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
+  /usr/include/c++/13/queue \
+  /usr/include/c++/13/ratio \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -154,6 +168,8 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
   /usr/include/x86_64-linux-gnu/asm/socket.h \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -163,6 +179,7 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -188,6 +205,7 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -243,9 +261,11 @@ CMakeFiles/server.dir/src/Acceptor.cpp.o: /home/aaron/Projects/Reactor_Server/sr
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
@@ -462,10 +482,12 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -486,6 +508,7 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/bits/new_allocator.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
@@ -497,14 +520,18 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -512,6 +539,7 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
@@ -523,10 +551,12 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cstring \
+  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -541,9 +571,13 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
+  /usr/include/c++/13/queue \
+  /usr/include/c++/13/ratio \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -582,6 +616,8 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
   /usr/include/x86_64-linux-gnu/asm/socket.h \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -591,6 +627,7 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -616,6 +653,7 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -671,9 +709,11 @@ CMakeFiles/server.dir/src/Channel.cpp.o: /home/aaron/Projects/Reactor_Server/src
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
@@ -711,10 +751,12 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -735,6 +777,7 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/new_allocator.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
@@ -746,14 +789,18 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -761,6 +808,7 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
@@ -772,10 +820,12 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cstring \
+  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -790,9 +840,13 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
+  /usr/include/c++/13/queue \
+  /usr/include/c++/13/ratio \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -831,6 +885,8 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
   /usr/include/x86_64-linux-gnu/asm/socket.h \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -840,6 +896,7 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -865,6 +922,7 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -920,9 +978,11 @@ CMakeFiles/server.dir/src/Connection.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
@@ -1120,6 +1180,7 @@ CMakeFiles/server.dir/src/EchoServer.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -1201,6 +1262,7 @@ CMakeFiles/server.dir/src/EchoServer.cpp.o: /home/aaron/Projects/Reactor_Server/
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -1242,10 +1304,12 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -1266,6 +1330,7 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/bits/new_allocator.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
@@ -1277,14 +1342,18 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -1292,6 +1361,7 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
@@ -1303,10 +1373,12 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cstring \
+  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -1321,9 +1393,13 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
+  /usr/include/c++/13/queue \
+  /usr/include/c++/13/ratio \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -1362,6 +1438,8 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
   /usr/include/x86_64-linux-gnu/asm/socket.h \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -1371,6 +1449,7 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -1396,6 +1475,7 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -1451,9 +1531,11 @@ CMakeFiles/server.dir/src/Epoll.cpp.o: /home/aaron/Projects/Reactor_Server/src/E
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
@@ -1491,10 +1573,12 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -1515,6 +1599,7 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/new_allocator.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
@@ -1526,14 +1611,18 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -1541,6 +1630,7 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
@@ -1552,10 +1642,12 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cstring \
+  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -1570,9 +1662,13 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
+  /usr/include/c++/13/queue \
+  /usr/include/c++/13/ratio \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -1611,6 +1707,8 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
   /usr/include/x86_64-linux-gnu/asm/socket.h \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -1620,6 +1718,7 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -1645,6 +1744,7 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -1700,9 +1800,11 @@ CMakeFiles/server.dir/src/EventLoop.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
@@ -2273,6 +2375,7 @@ CMakeFiles/server.dir/src/TcpServer.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -2354,6 +2457,7 @@ CMakeFiles/server.dir/src/TcpServer.cpp.o: /home/aaron/Projects/Reactor_Server/s
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -2789,6 +2893,7 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
@@ -2870,6 +2975,7 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
+  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -2888,27 +2994,9 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /home/aaron/Projects/Reactor_Server/src/EventLoop.cpp:
 
-/usr/include/x86_64-linux-gnu/bits/syscall.h:
-
-/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
-
-/usr/include/x86_64-linux-gnu/asm/unistd.h:
-
 /usr/include/c++/13/thread:
 
-/usr/include/c++/13/ratio:
-
-/usr/include/c++/13/queue:
-
-/usr/include/c++/13/mutex:
-
 /usr/include/c++/13/map:
-
-/usr/include/c++/13/deque:
-
-/usr/include/c++/13/ctime:
-
-/usr/include/c++/13/bits/unique_lock.h:
 
 /usr/include/c++/13/bits/this_thread_sleep.h:
 
@@ -2918,33 +3006,25 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/stl_map.h:
 
-/usr/include/c++/13/utility:
-
-/usr/include/c++/13/bits/stl_heap.h:
-
-/usr/include/c++/13/bits/stl_deque.h:
-
-/usr/include/c++/13/bits/std_mutex.h:
-
 /usr/include/c++/13/bits/erase_if.h:
 
-/usr/include/c++/13/bits/deque.tcc:
+/home/aaron/Projects/Reactor_Server/include/TcpServer.h:
 
-/usr/include/c++/13/bits/streambuf.tcc:
+/home/aaron/Projects/Reactor_Server/src/EchoServer.cpp:
 
-/usr/include/c++/13/vector:
+/home/aaron/Projects/Reactor_Server/src/Connection.cpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+/home/aaron/Projects/Reactor_Server/src/Buffer.cpp:
 
-/usr/include/c++/13/typeinfo:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/usr/include/c++/13/system_error:
+/usr/include/x86_64-linux-gnu/sys/eventfd.h:
 
-/usr/include/c++/13/bits/range_access.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/c++/13/ostream:
 
@@ -2952,23 +3032,17 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/usr/include/c++/13/new:
+/usr/include/c++/13/mutex:
 
-/usr/include/c++/13/ext/alloc_traits.h:
+/usr/include/c++/13/bits/unique_lock.h:
 
 /usr/include/c++/13/bits/std_thread.h:
 
 /usr/include/c++/13/initializer_list:
 
-/usr/include/c++/13/iostream:
-
-/usr/include/c++/13/ext/type_traits.h:
-
 /usr/include/c++/13/ext/string_conversions.h:
 
 /usr/include/c++/13/ext/concurrence.h:
-
-/home/aaron/Projects/Reactor_Server/src/Connection.cpp:
 
 /usr/include/c++/13/cctype:
 
@@ -2976,11 +3050,11 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/asm-generic/bitsperlong.h:
 
-/usr/include/errno.h:
-
-/usr/include/c++/13/bits/functional_hash.h:
-
 /usr/include/c++/13/debug/assertions.h:
+
+/usr/include/c++/13/ctime:
+
+/usr/include/c++/13/deque:
 
 /usr/include/c++/13/cstdlib:
 
@@ -2989,8 +3063,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/c++/13/cstdio:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/home/aaron/Projects/Reactor_Server/src/Buffer.cpp:
 
 /usr/include/x86_64-linux-gnu/sys/syscall.h:
 
@@ -3014,11 +3086,17 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
+/usr/include/c++/13/bits/streambuf.tcc:
+
 /usr/include/c++/13/memory:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/home/aaron/Projects/Reactor_Server/include/EchoServer.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
@@ -3044,15 +3122,13 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
-/usr/include/c++/13/bits/parse_numbers.h:
-
-/usr/include/c++/13/bits/std_abs.h:
-
 /usr/include/c++/13/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/13/bits/shared_ptr.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/c++/13/bits/stl_deque.h:
 
 /usr/include/c++/13/bits/locale_facets.tcc:
 
@@ -3063,6 +3139,18 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/c++/13/new:
+
+/usr/include/c++/13/ext/alloc_traits.h:
+
+/usr/include/c++/13/utility:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
 
 /usr/include/c++/13/ext/aligned_buffer.h:
 
@@ -3078,6 +3166,18 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
+/home/aaron/Projects/Reactor_Server/include/ThreadPool.h:
+
+/usr/include/c++/13/bits/stl_queue.h:
+
+/usr/include/c++/13/bits/requires_hosted.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/c++/13/limits:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
 /usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
@@ -3090,15 +3190,17 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/locale_facets.h:
 
+/usr/include/c++/13/bits/predefined_ops.h:
+
+/usr/include/c++/13/iosfwd:
+
 /usr/include/c++/13/bits/stl_construct.h:
+
+/usr/include/c++/13/bits/std_mutex.h:
 
 /usr/include/asm-generic/posix_types.h:
 
 /usr/include/stdc-predef.h:
-
-/usr/include/c++/13/type_traits:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/c++/13/bits/allocated_ptr.h:
 
@@ -3106,7 +3208,11 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
-/usr/include/c++/13/stdexcept:
+/usr/include/c++/13/bits/range_access.h:
+
+/usr/include/c++/13/system_error:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/asm-generic/sockios.h:
 
@@ -3116,13 +3222,15 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/backward/binders.h:
 
-/usr/include/features-time64.h:
-
 /usr/include/c++/13/istream:
 
 /usr/include/asm-generic/socket.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/home/aaron/Projects/Reactor_Server/src/Acceptor.cpp:
 
 /usr/include/c++/13/ios:
 
@@ -3138,13 +3246,13 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /home/aaron/Projects/Reactor_Server/include/Epoll.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
+/home/aaron/Projects/Reactor_Server/include/Connection.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/c++/13/bits/predefined_ops.h:
-
-/usr/include/c++/13/iosfwd:
 
 /usr/include/c++/13/bits/alloc_traits.h:
 
@@ -3164,7 +3272,7 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /home/aaron/Projects/Reactor_Server/include/InetAddress.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+/usr/include/c++/13/ratio:
 
 /usr/include/c++/13/backward/auto_ptr.h:
 
@@ -3175,12 +3283,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
-
-/home/aaron/Projects/Reactor_Server/src/Epoll.cpp:
-
-/usr/include/c++/13/string:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -3193,6 +3295,14 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/alloca.h:
 
 /usr/include/c++/13/atomic:
+
+/usr/include/x86_64-linux-gnu/sys/epoll.h:
+
+/usr/include/c++/13/bits/basic_string.h:
+
+/usr/include/c++/13/bits/chrono.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/13/bits/invoke.h:
 
@@ -3208,6 +3318,14 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+/usr/include/c++/13/iostream:
+
+/usr/include/c++/13/ext/type_traits.h:
+
+/usr/include/c++/13/bits/deque.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
 /usr/include/x86_64-linux-gnu/bits/socket_type.h:
 
 /usr/include/c++/13/bits/localefwd.h:
@@ -3215,6 +3333,10 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/c++/13/bits/ptr_traits.h:
 
 /usr/include/linux/posix_types.h:
+
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/13/typeinfo:
 
 /usr/include/c++/13/bits/exception.h:
 
@@ -3232,9 +3354,9 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
-/usr/include/c++/13/tuple:
+/usr/include/c++/13/bits/functional_hash.h:
 
-/usr/include/c++/13/bits/nested_exception.h:
+/usr/include/errno.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
@@ -3250,25 +3372,47 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/c++/13/bits/ostream.tcc:
 
-/usr/include/ctype.h:
-
 /usr/include/c++/13/bits/locale_classes.tcc:
 
 /usr/include/c++/13/bits/memoryfwd.h:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
-
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/time.h:
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
+/usr/include/c++/13/queue:
+
+/usr/include/endian.h:
+
+/usr/include/stdint.h:
+
+/usr/include/c++/13/stdexcept:
+
+/home/aaron/Projects/Reactor_Server/src/Epoll.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/c++/13/string:
+
+/usr/include/c++/13/bits/nested_exception.h:
+
+/usr/include/c++/13/tuple:
+
+/usr/include/c++/13/type_traits:
+
+/usr/include/c++/13/vector:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
+/usr/include/ctype.h:
+
+/usr/include/features-time64.h:
+
 /usr/include/features.h:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/x86_64-linux-gnu/sys/epoll.h:
 
 /usr/include/linux/close_range.h:
 
@@ -3284,15 +3428,19 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/sched.h:
 
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
-
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
 
 /usr/include/stdio.h:
 
 /usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/c++/13/cwchar:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/eventfd.h:
 
 /usr/include/string.h:
 
@@ -3304,12 +3452,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/unistd.h:
 
-/usr/include/c++/13/cwchar:
-
-/usr/include/x86_64-linux-gnu/asm/socket.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
 /usr/include/c++/13/bits/shared_ptr_base.h:
 
 /usr/include/wchar.h:
@@ -3318,6 +3460,10 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
+/usr/include/x86_64-linux-gnu/asm/unistd.h:
+
+/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
+
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
@@ -3325,18 +3471,6 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/c++/13/bits/requires_hosted.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/c++/13/limits:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
@@ -3361,6 +3495,8 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/netinet/tcp.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/syscall.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -3387,6 +3523,12 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
 
 /usr/include/asm-generic/errno.h:
 
@@ -3431,35 +3573,3 @@ CMakeFiles/server.dir/src/epoll_server.cpp.o: /home/aaron/Projects/Reactor_Serve
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/c++/13/bits/stl_vector.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
-
-/usr/include/x86_64-linux-gnu/sys/socket.h:
-
-/home/aaron/Projects/Reactor_Server/src/EchoServer.cpp:
-
-/home/aaron/Projects/Reactor_Server/src/Acceptor.cpp:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/home/aaron/Projects/Reactor_Server/include/Connection.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/home/aaron/Projects/Reactor_Server/include/EchoServer.h:
-
-/home/aaron/Projects/Reactor_Server/include/TcpServer.h:
-
-/usr/include/c++/13/bits/stl_queue.h:
-
-/home/aaron/Projects/Reactor_Server/include/ThreadPool.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/c++/13/bits/chrono.h:

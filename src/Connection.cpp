@@ -1,8 +1,8 @@
 #include "Connection.h"
 
 Connection::Connection(EventLoop* loop, Socket* client_socket) 
-    :loop_(loop), client_socket_(client_socket), disconnect_(false) {
-    client_channel_ = new Channel(loop_, client_socket_->fd());
+    :loop_(loop), client_socket_(client_socket), 
+    client_channel_(new Channel(loop_, client_socket_->fd())), disconnect_(false) {
     client_channel_->setReadCallback(std::bind(&Connection::onMessage, this));
     client_channel_->setCloseCallback(std::bind(&Connection::closeCallback, this));
     client_channel_->setErrorCallback(std::bind(&Connection::errorCallback, this));
@@ -13,7 +13,6 @@ Connection::Connection(EventLoop* loop, Socket* client_socket)
 
 Connection::~Connection() {
     delete client_socket_;
-    delete client_channel_;
 }
 
 int Connection::fd() const {return client_socket_->fd();}
@@ -67,7 +66,18 @@ void Connection::onMessage() {
 
 void Connection::send(const char* data, size_t size) {
     if (disconnect_ == true) {printf("Client disconect, send() returned.\n"); return;}
-    output_buffer_.appendWithHead(data, size);
+    std::shared_ptr<std::string> message(new std::string(data));
+    if (loop_->isInLoopThread()) {
+        printf("send() is in EventLoop thread.\n");
+        sendPlus(message);
+    } else {
+        printf("send() is not in EventLoop thread.\n");
+        loop_->queueInLoop(std::bind(&Connection::sendPlus, this, message));
+    }
+}
+
+void Connection::sendPlus(std::shared_ptr<std::string> data) {
+    output_buffer_.appendWithHead(data->data(), data->size());
     client_channel_->enableWriting();
 }
 

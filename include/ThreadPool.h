@@ -28,6 +28,8 @@ public:
 
     void addTask(std::function<void()> task);
 
+    size_t size() const;
+
     ~ThreadPool();
 };
 

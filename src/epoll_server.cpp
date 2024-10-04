@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    EchoServer echo_server(argv[1], atoi(argv[2])); 
+    EchoServer echo_server(argv[1], atoi(argv[2]), 3, 2); 
     echo_server.lanch();
 
     return 0;

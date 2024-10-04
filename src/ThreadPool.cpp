@@ -36,3 +36,7 @@ ThreadPool::~ThreadPool() {
     condition_.notify_all();
     for (std::thread& thread : threads_) thread.join();
 }
+
+size_t ThreadPool::size() const {
+    return threads_.size();
+}

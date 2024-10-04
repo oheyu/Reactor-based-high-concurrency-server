@@ -30,7 +30,11 @@ void EchoServer::handleErrorConnection(spConnection conn) {
 }
 
 void EchoServer::handleProcessMessage(spConnection conn, std::string& message) {
-    thread_pool_.addTask(std::bind(&EchoServer::onMessage, this, conn, message));
+    if (thread_pool_.size() == 0) {
+        onMessage(conn, message);
+    } else {
+        thread_pool_.addTask(std::bind(&EchoServer::onMessage, this, conn, message));
+    }
 }
 
 void EchoServer::onMessage(spConnection conn, std::string& message) {

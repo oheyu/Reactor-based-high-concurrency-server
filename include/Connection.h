@@ -8,6 +8,8 @@
 #include <functional>
 #include <memory>
 #include <atomic>
+#include <sys/syscall.h>
+#include <unistd.h>
 
 class Connection;
 class EventLoop;
@@ -19,7 +21,7 @@ class Connection : public std::enable_shared_from_this<Connection> {
 private:
     EventLoop* loop_;
     Socket* client_socket_;
-    Channel* client_channel_;
+    std::unique_ptr<Channel> client_channel_;
     std::function<void(spConnection)> close_callback_;
     std::function<void(spConnection)> error_callback_;
     std::function<void(spConnection, std::string&)> process_message_callback_;
@@ -56,6 +58,10 @@ public:
     void setSendCompleteCallback (std::function<void(spConnection)> fn);
 
     void send(const char* data, size_t size);
+    
+    // void sendPlus(const char* data, size_t size);
+
+    void sendPlus(std::shared_ptr<std::string> data);
 };
 
 #endif // !CONNECTION_H

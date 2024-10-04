@@ -63,3 +63,6 @@ Nothing to show here, a little bit simple.
 
 ### Step-20: Optimize with smart pointer.
 This step, mostly for life of object. I've used shared-ptr and unique-ptr. But the latter caused default, and I have no idea to solve it.
+
+### Step-21: Asynchronous Event Loop Wake-up.
+Here, the worker thread passes the process of handling the information to the event loop through the queue, and wakes up the event loop to execute the steps for processing the information.

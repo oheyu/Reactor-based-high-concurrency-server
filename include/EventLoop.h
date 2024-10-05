@@ -10,6 +10,7 @@
 #include <sys/syscall.h>
 #include <queue>
 #include <map>
+#include <atomic>
 #include <mutex>
 #include <sys/eventfd.h>
 #include <sys/syscall.h>
@@ -38,6 +39,7 @@ private:
     std::map<int, spConnection> conns_;
     std::function<void(int)> timer_callback_;
     std::mutex another_mutex_;
+    std::atomic_bool stop_;
 
 public:
     EventLoop(bool main_loop, int time_val = 24, int timeout_val = 60);
@@ -45,6 +47,8 @@ public:
     ~EventLoop();
 
     void run();
+
+    void stop();
 
     void addChannel(Channel* channel);
 

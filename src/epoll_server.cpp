@@ -1,4 +1,15 @@
 #include "EchoServer.h"
+#include <signal.h>
+
+EchoServer* echo_server;
+
+void truelyStop(int sig) {
+    printf("sig = %d.\n", sig);
+    echo_server->serverStop();
+    printf("echo_server is killed.\n");
+    delete echo_server;
+    exit(0);
+}
 
 int main(int argc, char* argv[]) {
     // Prompt for usage.
@@ -8,8 +19,11 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    EchoServer echo_server(argv[1], atoi(argv[2]), 3, 2); 
-    echo_server.lanch();
+    signal(SIGINT, truelyStop);
+    signal(SIGTERM, truelyStop);
+
+    echo_server = new EchoServer(argv[1], atoi(argv[2]), 3, 2); 
+    echo_server->lanch();
 
     return 0;
 }

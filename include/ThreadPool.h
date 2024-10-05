@@ -30,6 +30,8 @@ public:
 
     size_t size() const;
 
+    void stop();
+
     ~ThreadPool();
 };
 

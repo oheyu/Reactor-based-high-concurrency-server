@@ -26,6 +26,15 @@ TcpServer::~TcpServer() {
 
 void TcpServer::start() {main_loop_->run();}
 
+void TcpServer::serverStop() {
+    main_loop_->stop();
+    printf("Main loop is stopped.\n");
+    for (int i {0}; i < num_threads_; ++i) {sub_loops_[i]->stop();}
+    printf("Sub loop is stopped.\n");
+    thread_pool_->stop();
+    printf("IO thread is stopped.\n");
+}
+
 void TcpServer::newConnection(Socket* client_socket) {
     spConnection conn(new Connection(sub_loops_[client_socket->fd() % num_threads_], client_socket));
 

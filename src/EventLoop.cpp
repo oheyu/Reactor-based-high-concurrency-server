@@ -13,7 +13,7 @@ int createTimerFd(int seconds = 5) {
 EventLoop::EventLoop(bool main_loop, int time_val, int timeout_val) 
     : epoll_(new Epoll), main_loop_(main_loop), wakeup_fd_(eventfd(0, EFD_NONBLOCK)), 
     wakeup_channel_(new Channel(this, wakeup_fd_)), timer_fd_(createTimerFd(time_val_)), 
-    timer_channel_(new Channel(this, timer_fd_)), time_val_(time_val), timeout_val_(timeout_val) 
+    timer_channel_(new Channel(this, timer_fd_)), time_val_(time_val), timeout_val_(timeout_val), stop_(false)
 {
     wakeup_channel_->setReadCallback(std::bind(&EventLoop::handleWakeup, this));
     wakeup_channel_->enableReading();
@@ -25,11 +25,16 @@ EventLoop::~EventLoop() {}
 
 void EventLoop::run() {
     thread_id_ = syscall(SYS_gettid);
-    while (true) {
+    while (!stop_) {
         std::vector<Channel*> results {epoll_->loop()};
         if (results.size() == 0) epoll_timeout_callback_(this);
         for (auto& result : results) {result->handleEvent();}
     }
+}
+
+void EventLoop::stop() {
+    stop_ = true;
+    wakeup();
 }
 
 void EventLoop::addChannel(Channel* channel) {

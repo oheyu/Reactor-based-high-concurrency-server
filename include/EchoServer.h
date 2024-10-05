@@ -18,6 +18,8 @@ public:
 
     void lanch();
 
+    void serverStop();
+
     void handleNewConnection(spConnection conn);
 
     void handleCloseConnection(spConnection conn);

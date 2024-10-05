@@ -15,6 +15,12 @@ EchoServer::~EchoServer() {}
 
 void EchoServer::lanch() {tcp_server_.start();}
 
+void EchoServer::serverStop() {
+    thread_pool_.stop();
+    printf("WORK thread is stopped.\n");
+    tcp_server_.serverStop();
+}
+
 void EchoServer::handleNewConnection(spConnection conn) {
     std::cout << "Establish connection with <" << conn->ip() 
         << "> on <" << conn->port() << "> using <" << conn->fd() << ">" << std::endl;

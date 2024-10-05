@@ -68,3 +68,5 @@ This step, mostly for life of object. I've used shared-ptr and unique-ptr. But t
 Here, the worker thread passes the process of handling the information to the event loop through the queue, and wakes up the event loop to execute the steps for processing the information.
 
 ### Step-22: Clean Connection in idle.
+
+### Step-23: Exit with peace.

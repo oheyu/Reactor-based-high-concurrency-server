@@ -37,6 +37,8 @@ public:
 
     void start();
 
+    void serverStop();
+
     void newConnection(Socket* client_socket);
 
     void closeConnection(spConnection connection);

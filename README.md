@@ -70,3 +70,7 @@ Here, the worker thread passes the process of handling the information to the ev
 ### Step-22: Clean Connection in idle.
 
 ### Step-23: Exit with peace.
+
+### Step-24: Optimize Buffer class.
+This's the last step in this project. There must be many thing to implement to get joy, it's up to you, my friends. 
+I show my great appreciation to Teacher Wu.

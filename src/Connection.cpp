@@ -45,13 +45,9 @@ void Connection::onMessage() {
         } else if (readn == -1 && errno == EINTR) {       // Interrupt.
             continue;
         } else if (readn == -1 && ((errno == EAGAIN) || (errno == EWOULDBLOCK))) {        // No data.
+            std::string message;
             while(true) {
-                int len;
-
-                std::memcpy(&len, input_buffer_.data(), 4);
-                if (input_buffer_.size() < len + 4) break;
-                std::string message(input_buffer_.data() + 4, len);
-                input_buffer_.erase(0, len + 4);
+                if (input_buffer_.pickMessage(message) == false) break;
                 std::cout << "Receive \"" << message << "\" from " << fd() << std::endl;
 
                 current_time_ = TimeStamp::now();
@@ -76,7 +72,7 @@ void Connection::send(const char* data, size_t size) {
 }
 
 void Connection::sendPlus(std::shared_ptr<std::string> data) {
-    output_buffer_.appendWithHead(data->data(), data->size());
+    output_buffer_.appendWithSeperation(data->data(), data->size());
     client_channel_->enableWriting();
 }
 

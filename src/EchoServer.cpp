@@ -18,15 +18,16 @@ void EchoServer::lanch() {tcp_server_.start();}
 void EchoServer::handleNewConnection(spConnection conn) {
     std::cout << "Establish connection with <" << conn->ip() 
         << "> on <" << conn->port() << "> using <" << conn->fd() << ">" << std::endl;
-    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+    // std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
 }
 
 void EchoServer::handleCloseConnection(spConnection conn) {
-    std::cerr << "Client @ " << conn->fd() << " disconnect." << std::endl;
+    std::cout << "Close connection with <" << conn->ip() 
+        << "> on <" << conn->port() << "> using <" << conn->fd() << ">" << std::endl;
 }
 
 void EchoServer::handleErrorConnection(spConnection conn) {
-    std::cerr << "Client # " << conn->fd() << " disconnect." << std::endl;
+    // std::cerr << "Client # " << conn->fd() << " disconnect." << std::endl;
 }
 
 void EchoServer::handleProcessMessage(spConnection conn, std::string& message) {
@@ -43,8 +44,7 @@ void EchoServer::onMessage(spConnection conn, std::string& message) {
 }
 
 void EchoServer::handleSendComplete(spConnection conn) {
-    std::cout << "All things were sent." << std::endl;
-    std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl;
+    // std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl;
 }
 
 void EchoServer::handleEpollTimeout(EventLoop* loop) {

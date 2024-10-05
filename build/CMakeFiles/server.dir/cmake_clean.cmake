@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/src/TcpServer.cpp.o.d"
   "CMakeFiles/server.dir/src/ThreadPool.cpp.o"
   "CMakeFiles/server.dir/src/ThreadPool.cpp.o.d"
+  "CMakeFiles/server.dir/src/TimeStamp.cpp.o"
+  "CMakeFiles/server.dir/src/TimeStamp.cpp.o.d"
   "CMakeFiles/server.dir/src/epoll_server.cpp.o"
   "CMakeFiles/server.dir/src/epoll_server.cpp.o.d"
 )

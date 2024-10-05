@@ -39,13 +39,12 @@ void Connection::onMessage() {
     char buffer[1024];
     while (true) {
         std::memset(buffer, 0, sizeof(buffer));
-        ssize_t readn {recv(fd(), buffer, sizeof(buffer), 0)};
+        ssize_t readn {::recv(fd(), buffer, sizeof(buffer), 0)};
         if (readn > 0) {
             input_buffer_.append(buffer, readn);
         } else if (readn == -1 && errno == EINTR) {       // Interrupt.
             continue;
         } else if (readn == -1 && ((errno == EAGAIN) || (errno == EWOULDBLOCK))) {        // No data.
-            // std::cout << "Receive \"" << input_buffer_.data() << "\" from " << fd() << std::endl;
             while(true) {
                 int len;
 
@@ -54,6 +53,8 @@ void Connection::onMessage() {
                 std::string message(input_buffer_.data() + 4, len);
                 input_buffer_.erase(0, len + 4);
                 std::cout << "Receive \"" << message << "\" from " << fd() << std::endl;
+
+                current_time_ = TimeStamp::now();
 
                 process_message_callback_(shared_from_this(), message);
             }
@@ -68,10 +69,8 @@ void Connection::send(const char* data, size_t size) {
     if (disconnect_ == true) {printf("Client disconect, send() returned.\n"); return;}
     std::shared_ptr<std::string> message(new std::string(data));
     if (loop_->isInLoopThread()) {
-        printf("send() is in EventLoop thread.\n");
         sendPlus(message);
     } else {
-        printf("send() is not in EventLoop thread.\n");
         loop_->queueInLoop(std::bind(&Connection::sendPlus, this, message));
     }
 }
@@ -88,4 +87,8 @@ void Connection::writeCallback() {
         client_channel_->disableWriting();
         send_complete_callback_(shared_from_this());
     }
+}
+
+bool Connection::timeOut(time_t now, int val) {
+    return ((now - current_time_.toInt()) > val);
 }

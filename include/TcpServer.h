@@ -7,6 +7,7 @@
 #include "Channel.h"
 #include "Acceptor.h"
 #include "Connection.h"
+#include <mutex>
 #include <functional>
 #include <map>
 #include <vector>
@@ -18,6 +19,7 @@ private:
     EventLoop* main_loop_;
     std::vector<EventLoop*> sub_loops_;
     ThreadPool* thread_pool_;
+    std::mutex mutex_;
     int num_threads_;
     Acceptor* acceptor_;
     std::map<int, spConnection> connections_;
@@ -58,6 +60,8 @@ public:
     void setSendCompleteCallback(std::function<void(spConnection)> func);
 
     void setEpollTimeoutCallback(std::function<void(EventLoop*)> func);
+
+    void removeConn(int fd);
 };
 
 #endif

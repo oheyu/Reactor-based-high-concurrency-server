@@ -5,6 +5,7 @@
 #include "Socket.h"
 #include "Channel.h"
 #include "Buffer.h"
+#include "TimeStamp.h"
 #include <functional>
 #include <memory>
 #include <atomic>
@@ -29,6 +30,7 @@ private:
     Buffer input_buffer_;
     Buffer output_buffer_;
     std::atomic_bool disconnect_;
+    TimeStamp current_time_;
 
 public:
     Connection(EventLoop* loop, Socket* client_socket);
@@ -62,6 +64,8 @@ public:
     // void sendPlus(const char* data, size_t size);
 
     void sendPlus(std::shared_ptr<std::string> data);
+
+    bool timeOut(time_t now, int val);
 };
 
 #endif // !CONNECTION_H

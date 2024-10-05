@@ -16,7 +16,7 @@ ThreadPool::ThreadPool(size_t num_thread, const std::string& thread_type) : stop
                     task = std::move(this->task_queue_.front());
                     this->task_queue_.pop();
                 }
-                printf("%s (%ld) execute task.\n", thread_type_.c_str(), syscall(SYS_gettid));
+                // printf("%s (%ld) execute task.\n", thread_type_.c_str(), syscall(SYS_gettid));
                 task();
             }
         });

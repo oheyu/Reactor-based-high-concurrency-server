@@ -406,6 +406,30 @@ src/ThreadPool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/ThreadPool.cpp.s
 .PHONY : src/ThreadPool.cpp.s
 
+src/TimeStamp.o: src/TimeStamp.cpp.o
+.PHONY : src/TimeStamp.o
+
+# target to build an object file
+src/TimeStamp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/TimeStamp.cpp.o
+.PHONY : src/TimeStamp.cpp.o
+
+src/TimeStamp.i: src/TimeStamp.cpp.i
+.PHONY : src/TimeStamp.i
+
+# target to preprocess a source file
+src/TimeStamp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/TimeStamp.cpp.i
+.PHONY : src/TimeStamp.cpp.i
+
+src/TimeStamp.s: src/TimeStamp.cpp.s
+.PHONY : src/TimeStamp.s
+
+# target to generate assembly for a file
+src/TimeStamp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/TimeStamp.cpp.s
+.PHONY : src/TimeStamp.cpp.s
+
 src/client.o: src/client.cpp.o
 .PHONY : src/client.o
 
@@ -497,6 +521,9 @@ help:
 	@echo "... src/ThreadPool.o"
 	@echo "... src/ThreadPool.i"
 	@echo "... src/ThreadPool.s"
+	@echo "... src/TimeStamp.o"
+	@echo "... src/TimeStamp.i"
+	@echo "... src/TimeStamp.s"
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"

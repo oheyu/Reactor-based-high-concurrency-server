@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     std::cout << "Connect OK" << std::endl;
 
     char buffer[1024];
-    for (int i {0}; i < 4; ++i) {
+    for (int i {0}; i < 10; ++i) {
         std::memset(buffer, 0, sizeof(buffer));
         std::snprintf(buffer, sizeof(buffer), "This is No.%d supergirl", i);
 
@@ -38,11 +38,7 @@ int main(int argc, char* argv[]) {
         if (send(client_fd, temp, len + 4, 0) == -1) {
             std::perror("send() failed"); close(client_fd); return -1;
         }
-    }
 
-    for (int i {0}; i < 4; ++i) {
-
-        int len;
         recv(client_fd, &len, 4, 0);
         memset(buffer, 0, sizeof(buffer));
         if (recv(client_fd, buffer, len, 0) == -1) {
@@ -50,5 +46,6 @@ int main(int argc, char* argv[]) {
         }
 
         std::cout << "Received message: " << buffer << std::endl;
+        sleep(1);
     }
 }
